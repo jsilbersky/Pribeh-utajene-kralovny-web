@@ -115,10 +115,8 @@
       if (show.note === 'PREMIÉRA') noteBadge = '<span class="show-note note-premiere">PREMIÉRA</span>';
       else if (show.note) noteBadge = `<span class="show-note note-repriza">${show.note}</span>`;
 
-      // Minulá data: karta zůstane, ale bez tlačítka
-      const cta = isPast
-        ? ''
-        : `<a href="${show.ticketUrl}" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Koupit vstupenky →</a>`;
+      // Minulá data: tlačítko zůstane ale neaktivní
+      const cta = `<a href="${show.ticketUrl}" target="_blank" rel="noopener" class="btn btn-gold btn-sm" ${isPast ? 'style="pointer-events:none;opacity:.5;"' : ''}>Koupit vstupenky →</a>`;
 
       const card = document.createElement('div');
       card.className = 'show-card fade-up' + (isPast ? ' past' : '');

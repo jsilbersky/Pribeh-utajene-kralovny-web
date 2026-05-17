@@ -654,7 +654,17 @@ h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; line-height: 1.15; 
   transition: border-color 0.22s, transform 0.22s;
 }
 .show-card:hover { border-color: rgba(201,168,76,.4); transform: translateY(-3px); }
-.show-card.past  { opacity: .35; pointer-events: none; }
+.show-card.past {
+  opacity: 0.2;
+  filter: grayscale(100%);
+  pointer-events: none;
+  border-color: rgba(255,255,255,.02) !important;
+}
+.show-card.past:hover { transform: none; }
+.show-card.past .show-date,
+.show-card.past .show-time-venue,
+.show-card.past .show-note { color: rgba(240,234,224,.25) !important; }
+.show-card.past .btn { pointer-events: none; cursor: not-allowed; opacity: 0.4; }
 .show-date {
   font-family: 'Playfair Display', serif;
   font-size: 1.35rem; color: var(--white);
