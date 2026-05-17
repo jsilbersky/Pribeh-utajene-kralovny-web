@@ -1,0 +1,57 @@
+[
+    {
+    "id": "generalka1-2026",
+    "date": "2026-09-08",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Veřejná generálka",
+    "ticketUrl": "https://goout.net/cs/divadlo-na-orli/vzjkr/events/",
+    "sold_out": false
+  },  
+  {
+    "id": "generalka2-2026",
+    "date": "2026-09-09",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Veřejná generálka",
+    "ticketUrl": "https://goout.net/cs/divadlo-na-orli/vzjkr/events/",
+    "sold_out": false
+  },
+  {
+    "id": "premiere-2026",
+    "date": "2026-09-10",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "PREMIÉRA",
+    "ticketUrl": "https://goout.net/cs/divadlo-na-orli/vzjkr/events/",
+    "sold_out": false
+  },
+  {
+    "id": "repriza-2026-09-17",
+    "date": "2026-09-11",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Repríza",
+    "ticketUrl": "https://goout.net/cs/divadlo-na-orli/vzjkr/events/",
+    "sold_out": false
+  },
+  {
+    "id": "repriza-2026-09-24",
+    "date": "2026-09-30",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Repríza",
+    "ticketUrl": "https://goout.net/cs/divadlo-na-orli/vzjkr/events/",
+    "sold_out": false
+  },
+  {
+    "id": "repriza-2026-10-08",
+    "date": "2026-10-01",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Repríza",
+    "ticketUrl": "https://goout.net/cs/divadlo-na-orli/vzjkr/events/",
+    "sold_out": false
+  }
+
+]
