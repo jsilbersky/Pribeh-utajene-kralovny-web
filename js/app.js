@@ -122,7 +122,7 @@
       card.className = 'show-card fade-up' + (isPast ? ' past' : '');
       card.innerHTML = `
         ${noteBadge}
-        <div class="show-date">${dateStr}</div>
+        <div class="show-date">${show.dayOfWeek} ${dateStr}</div>
         <div class="show-time-venue">${show.time} · ${show.venue}</div>
         ${cta}`;
       grid.appendChild(card);
