@@ -1467,3 +1467,28 @@ h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; line-height: 1.15; 
   .posters-scroll .poster-item { width: 160px; }
   .posters-scroll .poster-item img { height: 227px; }
 }
+
+.show-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(205, 177, 96, 0.15);
+  border: 1px solid rgba(205, 177, 96, 0.3);
+  border-radius: 4px;
+  color: #cdb160;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: default;
+}
+
+.show-label-disabled {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(100, 100, 100, 0.1);
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-radius: 4px;
+  color: #888;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}

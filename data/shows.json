@@ -1,7 +1,39 @@
 [
-
   {
-    "id": "premiere-2026",
+    "id": "predpremiera-23-06",
+    "date": "2026-06-23",
+    "dayOfWeek": "út",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Předpremiéra",
+    "label": "Pro zvané",
+    "ticketUrl": null,
+    "sold_out": false
+  },
+  {
+    "id": "predpremiera-08-09",
+    "date": "2026-09-08",
+    "dayOfWeek": "út",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Předpremiéra",
+    "label": "Pro zvané",
+    "ticketUrl": null,
+    "sold_out": false
+  },
+  {
+    "id": "predpremiera-09-09",
+    "date": "2026-09-09",
+    "dayOfWeek": "st",
+    "time": "19:00",
+    "venue": "Divadlo na Orlí, Brno",
+    "note": "Předpremiéra",
+    "label": "Pro zvané",
+    "ticketUrl": null,
+    "sold_out": false
+  },
+  {
+    "id": "premiere-10-09",
     "date": "2026-09-10",
     "dayOfWeek": "čt",
     "time": "19:00",
@@ -11,7 +43,7 @@
     "sold_out": true
   },
   {
-    "id": "repriza-2026-09-17",
+    "id": "repriza-11-09",
     "date": "2026-09-11",
     "dayOfWeek": "pá",
     "time": "19:00",
@@ -21,7 +53,7 @@
     "sold_out": false
   },
   {
-    "id": "repriza-2026-09-24",
+    "id": "repriza-30-09",
     "date": "2026-09-30",
     "dayOfWeek": "st",
     "time": "19:00",
@@ -31,7 +63,7 @@
     "sold_out": false
   },
   {
-    "id": "repriza-2026-10-08",
+    "id": "repriza-01-10",
     "date": "2026-10-01",
     "dayOfWeek": "čt",
     "time": "19:00",
@@ -40,5 +72,4 @@
     "ticketUrl": "https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/",
     "sold_out": false
   }
-
 ]

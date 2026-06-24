@@ -90,13 +90,18 @@
     .then(renderShows)
     .catch(() => {
       renderShows([
-        { id: 'premiere-2026',       date: '2026-09-10', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'PREMIÉRA', ticketUrl: '#vstupenky', sold_out: false },
-        { id: 'repriza-2026-09-17',  date: '2026-09-17', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'Repríza',  ticketUrl: '#vstupenky', sold_out: false },
-        { id: 'repriza-2026-09-24',  date: '2026-09-24', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'Repríza',  ticketUrl: '#vstupenky', sold_out: false },
-        { id: 'repriza-2026-10-08',  date: '2026-10-08', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'Repríza',  ticketUrl: '#vstupenky', sold_out: false },
-        { id: 'repriza-2026-10-15',  date: '2026-10-15', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'Repríza',  ticketUrl: '#vstupenky', sold_out: true  },
+        { id: 'premiere-2026',       date: '2026-09-10', dayOfWeek: 'čt', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'PREMIÉRA', ticketUrl: 'https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/', sold_out: false },
+        { id: 'repriza-2026-09-17',  date: '2026-09-17', dayOfWeek: 'čt', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'Repríza',  ticketUrl: 'https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/', sold_out: false },
       ]);
     });
+
+  function isValidUrl(string) {
+    try {
+      return string && (string.startsWith('http://') || string.startsWith('https://'));
+    } catch (e) {
+      return false;
+    }
+  }
 
   function renderShows(shows) {
     const grid = document.createElement('div');
@@ -110,13 +115,24 @@
         day: 'numeric', month: 'long', year: 'numeric'
       });
 
-      // Žádné "Vyprodáno" — stav neznáme bez API
       let noteBadge = '';
       if (show.note === 'PREMIÉRA') noteBadge = '<span class="show-note note-premiere">PREMIÉRA</span>';
       else if (show.note) noteBadge = `<span class="show-note note-repriza">${show.note}</span>`;
 
-      // Minulá data: tlačítko zůstane ale neaktivní
-      const cta = `<a href="${show.ticketUrl}" target="_blank" rel="noopener" class="btn btn-gold btn-sm" ${isPast ? 'style="pointer-events:none;opacity:.5;"' : ''}>Koupit vstupenky →</a>`;
+      // 🔑 Klíčová změna: detekce URL vs. text
+      let cta = '';
+      const hasValidUrl = isValidUrl(show.ticketUrl);
+
+      if (hasValidUrl && !isPast) {
+        // Odkaz na vstupenky
+        cta = `<a href="${show.ticketUrl}" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Koupit vstupenky →</a>`;
+      } else if (show.label) {
+        // Vlastní text (např. "Pro zvané")
+        cta = `<div class="show-label">${show.label}</div>`;
+      } else if (isPast) {
+        // Minulé představení — zašedlé tlačítko
+        cta = `<div class="show-label-disabled">Představení proběhlo</div>`;
+      }
 
       const card = document.createElement('div');
       card.className = 'show-card fade-up' + (isPast ? ' past' : '');
@@ -129,9 +145,7 @@
     });
 
     container.appendChild(grid);
-    // JSON-LD Event schema
     injectEventSchema(shows);
-    // Trigger scroll observer
     observeFadeUp();
   }
 
