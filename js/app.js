@@ -17,11 +17,13 @@
 
   function openMenu() {
     hamburger && hamburger.classList.add('open');
+    hamburger && hamburger.setAttribute('aria-expanded', 'true');
     mobileMenu && mobileMenu.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closeMenu() {
     hamburger && hamburger.classList.remove('open');
+    hamburger && hamburger.setAttribute('aria-expanded', 'false');
     mobileMenu && mobileMenu.classList.remove('open');
     document.body.style.overflow = '';
   }
@@ -29,7 +31,8 @@
   hamburger && hamburger.addEventListener('click', openMenu);
   mobileClose && mobileClose.addEventListener('click', closeMenu);
   mobileMenu && mobileMenu.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) closeMenu();
+    // Klik mimo položky i klik na odkaz (kotva v rámci stránky) menu zavře
+    if (e.target === mobileMenu || e.target.closest('a')) closeMenu();
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeMenu();
@@ -43,6 +46,15 @@
       a.classList.add('active');
     }
   });
+})();
+
+// Footer year
+(function () {
+  const footerYear = document.querySelector('.footer-copyright');
+  if (footerYear) {
+    const currentYear = new Date().getFullYear();
+    footerYear.textContent = `© ${currentYear} Příběh utajené královny`;
+  }
 })();
 
 // Countdown
@@ -80,90 +92,6 @@
   setInterval(tick, 1000);
 })();
 
-// Show calendar
-(function () {
-  const container = document.getElementById('show-calendar');
-  if (!container) return;
-
-  fetch('data/shows.json')
-    .then((r) => r.json())
-    .then(renderShows)
-    .catch(() => {
-      renderShows([
-        { id: 'premiere-2026',       date: '2026-09-10', dayOfWeek: 'čt', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'PREMIÉRA', ticketUrl: 'https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/', sold_out: false },
-        { id: 'repriza-2026-09-17',  date: '2026-09-17', dayOfWeek: 'čt', time: '19:00', venue: 'Divadlo na Orlí, Brno', note: 'Repríza',  ticketUrl: 'https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/', sold_out: false },
-      ]);
-    });
-
-  function isValidUrl(string) {
-    try {
-      return string && (string.startsWith('http://') || string.startsWith('https://'));
-    } catch (e) {
-      return false;
-    }
-  }
-
-  function renderShows(shows) {
-    const grid = document.createElement('div');
-    grid.className = 'shows-grid';
-
-    shows.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-    shows.forEach((show) => {
-      const isPast = new Date(show.date + 'T' + show.time) < new Date();
-      const dateStr = new Date(show.date).toLocaleDateString('cs-CZ', {
-        day: 'numeric', month: 'long', year: 'numeric'
-      });
-
-      let noteBadge = '';
-      if (show.note === 'PREMIÉRA') noteBadge = '<span class="show-note note-premiere">PREMIÉRA</span>';
-      else if (show.note) noteBadge = `<span class="show-note note-repriza">${show.note}</span>`;
-
-      // 🔑 Klíčová změna: detekce URL vs. text
-      let cta = '';
-      const hasValidUrl = isValidUrl(show.ticketUrl);
-
-      if (hasValidUrl && !isPast) {
-        // Odkaz na vstupenky
-        cta = `<a href="${show.ticketUrl}" target="_blank" rel="noopener" class="btn btn-gold btn-sm">Koupit vstupenky →</a>`;
-      } else if (show.label) {
-        // Vlastní text (např. "Pro zvané")
-        cta = `<div class="show-label">${show.label}</div>`;
-      } else if (isPast) {
-        // Minulé představení — zašedlé tlačítko
-        cta = `<div class="show-label-disabled">Představení proběhlo</div>`;
-      }
-
-      const card = document.createElement('div');
-      card.className = 'show-card fade-up' + (isPast ? ' past' : '');
-      card.innerHTML = `
-        ${noteBadge}
-        <div class="show-date">${show.dayOfWeek} ${dateStr}</div>
-        <div class="show-time-venue">${show.time} · ${show.venue}</div>
-        ${cta}`;
-      grid.appendChild(card);
-    });
-
-    container.appendChild(grid);
-    injectEventSchema(shows);
-    observeFadeUp();
-  }
-
-  function injectEventSchema(shows) {
-    const events = shows.map((s) => ({
-      '@type': 'Event',
-      name: 'Příběh utajené královny',
-      startDate: s.date + 'T' + s.time + ':00+02:00',
-      location: { '@type': 'Place', name: s.venue },
-      offers: { '@type': 'Offer', url: s.ticketUrl, availability: s.sold_out ? 'SoldOut' : 'InStock' }
-    }));
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': events });
-    document.head.appendChild(script);
-  }
-})();
-
 // Lightbox
 (function () {
   const lightbox = document.getElementById('lightbox');
@@ -173,14 +101,28 @@
   const prev   = lightbox.querySelector('.lightbox-prev');
   const next   = lightbox.querySelector('.lightbox-next');
 
+  // Popisek — vytvoří se jen jednou, není potřeba ho mít v HTML
+  let caption = lightbox.querySelector('.lightbox-caption');
+  if (!caption) {
+    caption = document.createElement('div');
+    caption.className = 'lightbox-caption';
+    lightbox.appendChild(caption);
+  }
+
   let images = [];
+  let captions = [];
   let current = 0;
 
-  function open(srcs, idx) {
-    images = srcs; current = idx;
-    img.src = images[current];
+  function open(srcs, idx, caps) {
+    images = srcs;
+    captions = Array.isArray(caps) ? caps : [];
+    // Šipky jen když je co listovat
+    const nav = images.length > 1 ? '' : 'none';
+    if (prev) prev.style.display = nav;
+    if (next) next.style.display = nav;
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
+    show(idx);
   }
   function closeLB() {
     lightbox.classList.remove('open');
@@ -189,6 +131,9 @@
   function show(idx) {
     current = (idx + images.length) % images.length;
     img.src = images[current];
+    const text = captions[current] || '';
+    img.alt = text;
+    caption.textContent = text;
   }
 
   close  && close.addEventListener('click', closeLB);
@@ -206,8 +151,22 @@
   document.querySelectorAll('[data-gallery]').forEach((group) => {
     const items = [...group.querySelectorAll('[data-lb-src]')];
     const srcs = items.map((el) => el.dataset.lbSrc);
+    // [data-no-caption] — galerie bez popisků (alt zůstává kvůli přístupnosti)
+    const noCaption = group.hasAttribute('data-no-caption');
+    const caps = items.map((el) => {
+      if (noCaption) return '';
+      const inner = el.querySelector('img');
+      return el.dataset.lbCaption || (inner ? inner.alt : '') || '';
+    });
     items.forEach((el, i) => {
-      el.addEventListener('click', () => open(srcs, i));
+      el.addEventListener('click', () => open(srcs, i, caps));
+      if (el.tagName === 'DIV' || el.tagName === 'FIGURE') {
+        el.setAttribute('role', 'button');
+        el.setAttribute('tabindex', '0');
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(srcs, i, caps); }
+        });
+      }
     });
   });
 

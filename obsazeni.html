@@ -3,143 +3,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obsazení | Příběh utajené královny</title>
-  <meta name="description" content="Poznejte herce a postavy muzikálu Příběh utajené královny.">
+  <title>Obsazení muzikálu Příběh utajené královny | Karolina Meineke</title>
+  <meta name="description" content="Obsazení muzikálu Příběh utajené královny s postavou Karoliny Meineke – herci, role a fotografie premiéry.">
+  <link rel="canonical" href="https://pribehutajenekralovny.com/obsazeni.html">
+  <meta property="og:url" content="https://pribehutajenekralovny.com/obsazeni.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Obsazení muzikálu Příběh utajené královny | Karolina Meineke">
+  <meta property="og:description" content="Obsazení muzikálu Příběh utajené královny s Karolinou Meineke v hlavní roli. Divadlo na Orlí, Brno.">
+  <meta property="og:image" content="https://pribehutajenekralovny.com/images/karolina-meineke-muzikal-vizual.webp">
+  <meta property="og:image:alt" content="Obsazení muzikálu Příběh utajené královny">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Obsazení muzikálu Příběh utajené královny | Karolina Meineke">
+  <meta name="twitter:description" content="Obsazení muzikálu Příběh utajené královny s Karolinou Meineke v hlavní roli. Divadlo na Orlí, Brno.">
+  <meta name="twitter:image" content="https://pribehutajenekralovny.com/images/karolina-meineke-muzikal-vizual.webp">
+  <meta name="theme-color" content="#FCFAF6">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90'>👑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Hlavní navigace">
   <div class="container">
     <a href="index.html" class="nav-logo">
       Příběh utajené královny
-       <span>Muzikál · Divadlo na Orlí · JAMU</span>
+      <span>Divadelní fakulta JAMU · Divadlo na Orlí</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Úvod</a></li>
-      <li><a href="o-muzikalu.html">O muzikálu</a></li>
-      <li><a href="obsazeni.html">Obsazení</a></li>
-      <li><a href="o-karoline.html">O Karolině Meineke</a></li>
+      <li><a href="o-karoline.html">Karolina Meineke</a></li>
+      <li><a href="o-muzikalu.html">Muzikál</a></li>
+      <li><a href="obsazeni.html" class="active" aria-current="page">Obsazení</a></li>
     </ul>
-    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold nav-cta">🎟 Vstupenky</a>
-    <button class="hamburger" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket nav-cta">Vstupenky</a>
+    <button class="hamburger" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<div class="mobile-menu">
-  <button class="mobile-menu-close">✕</button>
+<div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobilní navigace">
+  <button class="mobile-menu-close" aria-label="Zavřít menu">✕</button>
   <a href="index.html">Úvod</a>
-  <a href="obsazeni.html">Obsazení</a>
-  <a href="o-muzikalu.html">O muzikálu</a>
-  <a href="o-karoline.html">O Karolině Meineke</a>
-  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold">🎟 Koupit vstupenky</a>
+  <a href="o-karoline.html">Karolina Meineke</a>
+  <a href="o-muzikalu.html">Muzikál</a>
+  <a href="obsazeni.html" aria-current="page">Obsazení</a>
+  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket">Koupit vstupenky</a>
 </div>
 
-<!-- ── Page Hero ── -->
-<header class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('images/Vizual.webp');" aria-hidden="true"></div>
-  <div class="page-hero-overlay" aria-hidden="true"></div>
-  <div class="container page-hero-content" style="text-align:center;">
+<!-- ── Záhlaví stránky ── -->
+<header class="page-head">
+  <div class="container">
     <p class="page-hero-eyebrow">Muzikál</p>
     <h1>Obsazení</h1>
-    <p>Účínkují studenti ateliéru muzikálového herectví Sylvy Talpové a Aleše Kohouta Divadelní fakulty JAMU.</p>
+    <div class="ornament" aria-hidden="true"><span></span></div>
+    <p class="page-head-lead">Účínkují studenti ateliéru muzikálového herectví Sylvy Talpové a Aleše Kohouta Divadelní fakulty JAMU.</p>
   </div>
 </header>
 
-<!-- ── Cast Grid ── -->
-<section class="section section-dark">
+<!-- ── Herci ── -->
+<section class="section" aria-label="Herci a postavy">
   <div class="container">
-    <div id="cast-grid" class="cast-grid" role="list"></div>
+    <div id="cast-grid" class="cast-grid" role="list">
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:0ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/mari-magdalena-fotrova.jpg" alt="Maří-Magdalena Fotrová jako Caroline von Linsingen v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Maří-Magdalena Fotrová</div>
+            <div class="cast-character">Caroline von Linsingen</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:60ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/karolina-butorova.jpg" alt="Karolina Bútorová jako Karolina Meineke v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Karolina Bútorová</div>
+            <div class="cast-character">Karolina Meineke</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:120ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/richard-ciller.jpg" alt="Richard Ciller jako princ William v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Richard Ciller</div>
+            <div class="cast-character">princ William</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:180ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/matyas-kyncl.jpg" alt="Matyáš Kyncl jako Adolph Meineke v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Matyáš Kyncl</div>
+            <div class="cast-character">Adolph Meineke</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:240ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/veronika-martinu.jpg" alt="Veronika Martinů jako Henrietta Meineke v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Veronika Martinů</div>
+            <div class="cast-character">Henrietta Meineke</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:300ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/natalia-klotkova.jpg" alt="Natália Klotková jako Emílie von Linsingen v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Natália Klotková</div>
+            <div class="cast-character">Emílie von Linsingen</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:360ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/hynek-mikus.jpg" alt="Hynek Mikuš jako Ernst von Linsingen / Gustav Friese v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Hynek Mikuš</div>
+            <div class="cast-character">Ernst von Linsingen / Gustav Friese</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:420ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/vaclav-fiala.jpg" alt="Václav Fiala jako Carl Teubner v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Václav Fiala</div>
+            <div class="cast-character">Carl Teubner</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:480ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/katerina-mickova.jpg" alt="Kateřina Michková jako Dory Jordan v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Kateřina Michková</div>
+            <div class="cast-character">Dory Jordan</div>
+          </div>
+        </div>
+      </div>
+      <div class="cast-card-wrapper" role="listitem" style="transition-delay:540ms">
+        <div class="cast-card">
+          <div class="frame">
+            <img src="images/obsazeni/martina-pavlinova.jpg" alt="Martina Pavlínová jako Královna Charlotta / Augusta Friese v muzikálu Příběh utajené královny s Karolinou Meineke v Divadle na Orlí, Brno" loading="lazy" class="cast-photo">
+          </div>
+          <div class="cast-card-info">
+            <div class="cast-actor">Martina Pavlínová</div>
+            <div class="cast-character">Královna Charlotta / Augusta Friese</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="cast-thanks" style="margin-top: 6rem; margin-bottom: 0; text-align: center; font-size: 0.95rem; line-height: 1.7; color: #6b5e4f;">
+      Děkujeme <a href="https://www.muzeum-blanenska.cz/" target="_blank" rel="noopener">Muzeu Blanenska</a>
+      a <a href="https://www.zamek-rajec.cz/cs" target="_blank" rel="noopener">Státnímu zámku Rájec nad Svitavou</a>
+      za poskytnutí prostoru pro focení.
+    </p>
   </div>
 </section>
 
-<!-- ── Cast Modal ── -->
-<div id="cast-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Detail herce">
-  <div class="modal">
-    <button class="modal-close" aria-label="Zavřít">✕</button>
-    <!-- Horní část: portrét + info -->
-    <div class="modal-body">
-      <div class="modal-img">
-        <img src="" alt="">
-      </div>
-      <div class="modal-info">
-        <h2 data-modal-actor></h2>
-        <h3 data-modal-character></h3>
-        <div class="modal-divider"></div>
-        <p class="modal-bio" data-modal-bio></p>
-        <div class="modal-socials"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ── CTA ── -->
-<div class="cta-banner cta-banner-dark fade-up" id="vstupenky">
-  <div class="container" style="text-align:center;">
+<section class="cta-banner fade-up" id="vstupenky">
+  <div class="container">
     <h2 class="cta-headline">Těšíme se na vás</h2>
     <p class="cta-subline">Divadlo na Orlí, Brno</p>
-    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold btn-lg">🎟 KOUPIT VSTUPENKY</a>
+    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket btn-lg">Koupit vstupenky</a>
   </div>
-</div>
+</section>
 
 <!-- ── Footer ── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">Příběh utajené královny<span>Muzikál</span></div>
         <p>Inspirováno skutečným příběhem Karoliny Meineke,
-první tajné manželky anglického krále Viléma IV,
-jejíž osud je spojen s Moravou.<br>
-           Divadelní fakulta JAMU, Ateliér muzikálového herectví Sylvy Talpové a Aleše Kohouta.<br>
-           </p>
+           první tajné manželky anglického krále Viléma IV,
+           jejíž osud je spojen s Moravou.<br>
+           Divadelní fakulta JAMU, Ateliér muzikálového herectví Sylvy Talpové a Aleše Kohouta.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/divadlonaorli/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.instagram.com/divadlonaorli/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/DivadloNaOrli/" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener" aria-label="Divadlo na Orlí"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener" aria-label="Divadlo na Orlí"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
         </div>
       </div>
       <div>
         <p class="footer-heading">Navigace</p>
         <ul class="footer-links">
           <li><a href="index.html">Úvod</a></li>
-          <li><a href="obsazeni.html">Obsazení</a></li>
-          <li><a href="o-muzikalu.html">O muzikálu</a></li>
-          <li><a href="o-karoline.html">O Karolině Meineke</a></li>
+          <li><a href="o-karoline.html">Karolina Meineke</a></li>
+          <li><a href="o-muzikalu.html">Muzikál</a></li>
+          <li><a href="obsazeni.html" aria-current="page">Obsazení</a></li>
         </ul>
       </div>
       <div>
-        <p class="footer-heading">Premiéra</p>
-        <ul class="footer-links">
-          <li>10. 9. 2026 · 19:00</li>
-          <li>Divadlo na Orlí, Brno</li>
-        </ul>
+        <p class="footer-heading">Hrajeme</p>
+        <p class="footer-date">od září 2026</p>
+        <p class="footer-venue">Divadlo na Orlí, Brno</p>
       </div>
-      <div>
-        <p class="footer-heading">Vstupenky</p>
-        <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:.5rem; white-space:nowrap;">🎟 Koupit vstupenky</a>
-      </div>
-    </div>
-    <div class="footer-support">
-      Realizováno za podpory
-      <a href="https://www.zamek-rajec.cz/cs" target="_blank" rel="noopener">Státního zámku Rájec nad Svitavou</a>
-      , <a href="https://www.muzeum-blanenska.cz/" target="_blank" rel="noopener">Muzea Blanenska</a>, <a href="https://divadlonaorli.jamu.cz/" target="_blank" rel="noopener">Divadla na Orlí</a> a <a href="https://df.jamu.cz/" target="_blank" rel="noopener">Divadelní fakulty JAMU.
-
-      </a>
     </div>
     <div class="footer-bottom">
       <p class="footer-copyright">© 2026 Příběh utajené královny</p>
+      <p class="footer-support">Tento web je nezávislou podporou muzikálu. Oficiální stránka je <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener">divadlonaorli.jamu.cz/pribeh-utajene-kralovny/</a>.</p>
     </div>
   </div>
 </footer>
 
-<div class="sticky-cta" aria-hidden="true">
-  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener">🎟 Koupit vstupenky</a>
+<div class="sticky-cta">
+  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn-ticket">Koupit vstupenky</a>
 </div>
 
 <script src="js/app.js"></script>
 <script src="js/cast.js"></script>
 </body>
 </html>
-

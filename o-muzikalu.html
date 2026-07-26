@@ -3,112 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O muzikálu | Příběh utajené královny</title>
-  <meta name="description" content="Anotace, inscenační tým a galerie muzikálu Příběh utajené královny. Divadlo na Orlí, Brno.">
+  <title>O muzikálu | Karolina Meineke | Příběh utajené královny</title>
+  <meta name="description" content="Muzikál Příběh utajené královny věnovaný Karolině Meineke – anotace, inscenační tým a galerie Divadla na Orlí, Brno.">
+  <link rel="canonical" href="https://pribehutajenekralovny.com/o-muzikalu.html">
+  <meta property="og:url" content="https://pribehutajenekralovny.com/o-muzikalu.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="O muzikálu | Karolina Meineke | Příběh utajené královny">
+  <meta property="og:description" content="Muzikál Příběh utajené královny věnovaný Karolině Meineke – anotace, inscenační tým a galerie Divadla na Orlí, Brno.">
+  <meta property="og:image" content="https://pribehutajenekralovny.com/images/karolina-meineke-muzikal-vizual.webp">
+  <meta property="og:image:alt" content="Hlavní vizuál muzikálu Příběh utajené královny s postavou Karoliny Meineke">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O muzikálu | Karolina Meineke | Příběh utajené královny">
+  <meta name="twitter:description" content="Muzikál Příběh utajené královny věnovaný Karolině Meineke – anotace, inscenační tým a galerie Divadla na Orlí, Brno.">
+  <meta name="twitter:image" content="https://pribehutajenekralovny.com/images/karolina-meineke-muzikal-vizual.webp">
+  <meta name="theme-color" content="#FCFAF6">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90'>👑</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    @media (max-width: 768px) {
-      .muzikalu-grid { grid-template-columns: 1fr !important; }
-    }
-  </style>
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Hlavní navigace">
   <div class="container">
     <a href="index.html" class="nav-logo">
       Příběh utajené královny
-   <span>Muzikál · Divadlo na Orlí · JAMU</span>
+      <span>Divadelní fakulta JAMU · Divadlo na Orlí</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Úvod</a></li>
-      <li><a href="o-muzikalu.html">O muzikálu</a></li>
+      <li><a href="o-karoline.html">Karolina Meineke</a></li>
+      <li><a href="o-muzikalu.html" class="active" aria-current="page">Muzikál</a></li>
       <li><a href="obsazeni.html">Obsazení</a></li>
-      <li><a href="o-karoline.html">O Karolině Meineke</a></li>
     </ul>
-    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold nav-cta">🎟 Vstupenky</a>
-    <button class="hamburger" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket nav-cta">Vstupenky</a>
+    <button class="hamburger" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<div class="mobile-menu">
-  <button class="mobile-menu-close">✕</button>
+<div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobilní navigace">
+  <button class="mobile-menu-close" aria-label="Zavřít menu">✕</button>
   <a href="index.html">Úvod</a>
+  <a href="o-karoline.html">Karolina Meineke</a>
+  <a href="o-muzikalu.html" aria-current="page">Muzikál</a>
   <a href="obsazeni.html">Obsazení</a>
-  <a href="o-muzikalu.html">O muzikálu</a>
-  <a href="o-karoline.html">O Karolině Meineke</a>
-  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold">🎟 Koupit vstupenky</a>
+  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket">Koupit vstupenky</a>
 </div>
 
-<header class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('images/Vizual.webp');" aria-hidden="true"></div>
-  <div class="page-hero-overlay" aria-hidden="true"></div>
-  <div class="container page-hero-content" style="text-align:center;">
+<!-- ── Záhlaví stránky ── -->
+<header class="page-head">
+  <div class="container">
     <p class="page-hero-eyebrow">Celozpívaný muzikál · dvě dějství</p>
     <h1>O muzikálu</h1>
-    <p>Příběh, který léta spal, znovu ožívá.</p>
+    <div class="ornament" aria-hidden="true"><span></span></div>
+    <p class="page-head-lead">Příběh, který léta spal, znovu ožívá.</p>
   </div>
 </header>
 
-
-<!-- ── Anotace ── -->
-<section class="section section-dark" aria-label="Anotace">
+<!-- ── Námět a autor ── -->
+<section class="section" aria-label="Námět a autor">
   <div class="container">
-    <div class="muzikalu-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3rem;">
-      <div class="fade-up">
-        <img src="images/Vizual.webp" alt="Plakát muzikálu Příběh utajené královny" style="width:100%;aspect-ratio:1;object-fit:cover;">
-      </div>
-      <div class="fade-up">
-        <h2 class="section-title" style="text-align:left;margin-top:0;">Námět</h2>
-        <div class="gold-line gold-line-left"></div>
-        <div class="annotation">
-          <p>
-            Hannover. Londýn. Morava. Tři místa, jeden osud a tajemství, které anglická koruna pohřbila
-            na dvě staletí.
-          </p>
 
-<p>Příběh muzikálu je inspirován osudem Karoliny Meineke rozené von Linsingen, tajné manželky britského krále Viléma IV., jejíž život byl v důsledku politických a mocenských rozhodnutí systematicky vytěsněn z oficiálních dějin. 
-          </p>
-          <p>
-Téma má zároveň výrazný regionální přesah, neboť životní příběh Karoliny je úzce spjat s jihomoravským městem Blansko, kde část svého života prožila a kde také zemřela. Inscenace tak propojuje evropský historický kontext s konkrétním místem v České republice a pokouší se vrátit do kulturní paměti osobnost, která je s tímto regionem přímo spojena. 
-</p>
-<p>Výjimečnost projektu spočívá nejen v jeho námětu, ale i ve formě. Nejedná se o klasický školní muzikál, nýbrž o stylizované hudebně-dramatické dílo s ambicí překračovat hranice žánru směrem k opeře. 
-          </p>
-    </div>
-  </div>
-</section>
-
-<section class="section section-dark" aria-label="Anotace">
-  <div class="container">
-    <div class="muzikalu-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
-      <div class="fade-up">
-        <h2 class="section-title" style="text-align:left;margin-top:0;">Autor</h2>
-        <div class="gold-line gold-line-left"></div>
-        <div class="annotation">
-          <p>
-         Aleš Kohout, herec, skladatel, režisér a pedagog, získal své první divadelní zkušenosti (herecké i autorské) v Uměleckém centru dětí a mládeže Květy Kimové. Po studiích muzikálového herectví v ateliéru docentky Sylvy Talpové na JAMU v Brně nastoupil jako sólista muzikálové scény Divadla J. K. Tyla v Plzni, kde během devíti sezón ztvárnil řadu výrazných rolí. Patří mezi ně například Molina v Polibku pavoučí ženy, Moritz Stiefel v Probuzení jara, Ren McCormack v Footloose či Jerry alias Daphné v Někdo to rád horké.
-          </p>
-          <p>
-V současnosti se naplno věnuje autorské a pedagogické činnosti. Společně se Sylvou Talpovou vede již třetí ateliér muzikálového herectví JAMU, od roku 2025 z pozice vedoucího. Pro studenty napsal několik autorských děl,  Anna Kareninová, Frankenstein – skutečný příběh či Metronom, která si u brněnského publika získala oblibu.
-          </p>
-          <p>
-Muzikál Příběh utajené královny představuje jeho první autorské zpracování regionálního tématu. Současně pokračuje v rozvíjení formy tzv. muzikálové opery, v níž se propojuje muzikálová a operní estetika.
-          </p>
+    <div class="feature-grid fade-up">
+      <figure class="frame">
+        <img src="images/karolina-meineke-muzikal-vizual.webp"
+             alt="Hlavní vizuál muzikálu Příběh utajené královny"
+             style="object-position:62% center;">
+      </figure>
+      <div>
+        <h2 class="section-title">Námět</h2>
+        <div class="rule rule--left" aria-hidden="true"></div>
+        <div class="annotation annotation--intro">
+          <p>Hannover. Londýn. Morava. Tři místa, jeden osud a tajemství, které anglická koruna pohřbila
+             na dvě staletí.</p>
+          <p>Příběh muzikálu je inspirován osudem Karoliny Meineke rozené von Linsingen, tajné manželky
+             britského krále Viléma IV., jejíž život byl v důsledku politických a mocenských rozhodnutí
+             systematicky vytěsněn z oficiálních dějin.</p>
+          <p>Téma má zároveň výrazný regionální přesah, neboť životní příběh Karoliny je úzce spjat
+             s jihomoravským městem Blansko, kde část svého života prožila a kde také zemřela. Inscenace
+             tak propojuje evropský historický kontext s konkrétním místem v České republice a pokouší se
+             vrátit do kulturní paměti osobnost, která je s tímto regionem přímo spojena.</p>
+          <p>Výjimečnost projektu spočívá nejen v jeho námětu, ale i ve formě. Nejedná se o klasický školní
+             muzikál, nýbrž o stylizované hudebně-dramatické dílo s ambicí překračovat hranice žánru
+             směrem k opeře.</p>
         </div>
       </div>
-      <div class="fade-up">
-        <img src="images/autor.jpg" alt="Autor muzikálu" style="width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;">
-      </div>
     </div>
+
+    <div class="feature-grid feature-grid--reverse fade-up" style="margin-top:clamp(4rem,8vw,7rem);">
+      <div>
+        <h2 class="section-title">Autor</h2>
+        <div class="rule rule--left" aria-hidden="true"></div>
+        <div class="annotation">
+          <p>Aleš Kohout, herec, skladatel, režisér a pedagog, získal své první divadelní zkušenosti
+             (herecké i autorské) v Uměleckém centru dětí a mládeže Květy Kimové. Po studiích muzikálového
+             herectví v ateliéru docentky Sylvy Talpové na JAMU v Brně nastoupil jako sólista muzikálové
+             scény Divadla J. K. Tyla v Plzni, kde během devíti sezón ztvárnil řadu výrazných rolí. Patří
+             mezi ně například Molina v Polibku pavoučí ženy, Moritz Stiefel v Probuzení jara, Ren
+             McCormack ve Footloose či Jerry alias Daphné v Někdo to rád horké.</p>
+          <p>V současnosti se naplno věnuje autorské a pedagogické činnosti. Společně se Sylvou Talpovou
+             vede již třetí ateliér muzikálového herectví JAMU, od roku 2025 z pozice vedoucího. Pro
+             studenty napsal několik autorských děl, Anna Kareninová, Frankenstein – skutečný příběh či
+             Metronom, která si u brněnského publika získala oblibu.</p>
+          <p>Muzikál Příběh utajené královny představuje jeho první autorské zpracování regionálního
+             tématu. Současně pokračuje v rozvíjení formy tzv. muzikálové opery, v níž se propojuje
+             muzikálová a operní estetika.</p>
+        </div>
+      </div>
+      <figure class="frame">
+        <img src="images/ales-kohout-autor.jpg"
+             alt="Aleš Kohout — autor a režisér muzikálu"
+             style="object-position:center top;">
+      </figure>
+    </div>
+
   </div>
 </section>
 
 <!-- ── Hudební ukázka ── -->
-<section class="video-section" id="video" aria-label="Hudební ukázka">
+<section class="video-section section-parchment" id="video" aria-label="Hudební ukázka">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;margin-bottom:1rem;">Hudební ukázka</h2>
-    <div class="gold-line" style="margin-bottom:2rem;"></div>
+    <div class="section-head fade-up">
+      <h2 class="section-title">Hudební ukázka</h2>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
     <div class="video-wrapper fade-up">
       <div class="video-placeholder"
            data-yt-src="https://www.youtube-nocookie.com/embed/e0xqo9Ghko0"
@@ -119,65 +138,56 @@ Muzikál Příběh utajené královny představuje jeho první autorské zpracov
         </div>
       </div>
     </div>
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://www.youtube.com/playlist?list=PLE17M0JerCSXyJO-dHqAnYBeyVpCU2L4S" target="_blank" rel="noopener" class="btn btn-gold">
-        Více skladeb →
+    <div class="fade-up" style="text-align:center; margin-top:2.5rem;">
+      <a href="https://www.youtube.com/playlist?list=PLE17M0JerCSXyJO-dHqAnYBeyVpCU2L4S" target="_blank" rel="noopener" class="link-arrow">
+        Více skladeb
       </a>
     </div>
   </div>
 </section>
 
 <!-- ── Inscenační tým ── -->
-<section class="section section-smoke" aria-label="Inscenační tým">
+<section class="section" aria-label="Inscenační tým">
   <div class="container">
     <div class="credits-layout">
       <div class="credits-intro fade-up">
         <h2 class="section-title">Inscenační tým</h2>
-        <div class="gold-line gold-line-left"></div>
-        <p style="color:rgba(240,234,224,.6);font-size:.95rem;line-height:1.8;margin-top:1rem;max-width:360px;">
+        <div class="rule rule--left" aria-hidden="true"></div>
+        <p style="margin-top:1.25rem;max-width:34ch;color:var(--ink-62);font-size:.97rem;">
           Muzikál vznikl v Ateliéru muzikálového herectví Sylvy Talpové a Aleše Kohouta.
         </p>
       </div>
       <div class="credits-table fade-up">
         <div class="credit-row">
           <span class="credit-role">Autor, Režie</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Aleš Kohout</span>
         </div>
-
         <div class="credit-row">
           <span class="credit-role">Choreografie</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Marcela Puldová</span>
         </div>
         <div class="credit-row">
           <span class="credit-role">Dramaturgická spolupráce</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Sylva Talpová</span>
         </div>
         <div class="credit-row">
           <span class="credit-role">Světelný design</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Tomáš Příkrý</span>
         </div>
-                <div class="credit-row">
+        <div class="credit-row">
           <span class="credit-role">Scénografie, Kostýmy</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Aleš Kohout</span>
         </div>
         <div class="credit-row">
           <span class="credit-role">Propagační materiály</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Jan Šmach, Klára Prchalová</span>
-          </div>
+        </div>
         <div class="credit-row">
           <span class="credit-role">Fotografie ze zkoušek</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Lucie Všianská, Petra Čumíčková</span>
         </div>
         <div class="credit-row">
           <span class="credit-role">Produkce</span>
-          <span class="credit-dots"></span>
           <span class="credit-name">Sabina Komárková, Kamila Murlová</span>
         </div>
       </div>
@@ -185,60 +195,89 @@ Muzikál Příběh utajené královny představuje jeho první autorské zpracov
   </div>
 </section>
 
-<!-- ── Fotogalerie ── -->
-<section class="section section-smoke" aria-label="Fotogalerie">
+<!-- ── Fotogalerie ze zkoušek ── -->
+<section class="section section-parchment" aria-label="Fotografie ze zkoušek">
   <div class="container">
-    <h2 class="section-title" style="text-align:center;margin-bottom:1rem;">Pohled do zákulisí</h2>
-    <div class="gold-line gold-line-center"></div>
-    <div class="photo-grid" data-gallery id="photo-gallery">
-
-      <div class="photo-grid-item" data-lb-src="images/645710127_18348581752238100_6933806829155636483_n.jpg">
-        <img src="images/645710127_18348581752238100_6933806829155636483_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+    <div class="section-head fade-up">
+      <h2 class="section-title">Pohled do zákulisí</h2>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+    <div class="photo-grid photo-grid--stage fade-up" data-gallery id="photo-gallery">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/ctena-zkouska-u-stolu.jpg">
+        <img src="images/zkousky/ctena-zkouska-u-stolu.jpg" alt="Čtená zkouška muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/681116662_18356977606238100_5638033067235735397_n.jpg">
-        <img src="images/681116662_18356977606238100_5638033067235735397_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/zkouska-ve-zkusebne.jpg">
+        <img src="images/zkousky/zkouska-ve-zkusebne.jpg" alt="Zkouška ve zkušebně pro muzikál Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/645950098_18348581779238100_6790779498944600265_n.jpg">
-        <img src="images/645950098_18348581779238100_6790779498944600265_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/herci-pri-zkousce.jpg">
+        <img src="images/zkousky/herci-pri-zkousce.jpg" alt="Herci při zkoušce muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/645892149_18348582013238100_8977401102558960813_n.jpg">
-        <img src="images/645892149_18348582013238100_8977401102558960813_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/rezisersky-moment-zkouska.jpg">
+        <img src="images/zkousky/rezisersky-moment-zkouska.jpg" alt="Režisérský moment během zkoušky muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/645933717_18348581770238100_8392578132906498597_n.jpg">
-        <img src="images/645933717_18348581770238100_8392578132906498597_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/skupinova-zkouska-na-jevisti.jpg">
+        <img src="images/zkousky/skupinova-zkouska-na-jevisti.jpg" alt="Skupinová zkouška na jevišti muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/681207896_18356977480238100_4355249899760052305_n.jpg">
-        <img src="images/681207896_18356977480238100_4355249899760052305_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/svetlo-a-pohyb-zkouska.jpg">
+        <img src="images/zkousky/svetlo-a-pohyb-zkouska.jpg" alt="Světlo a pohyb na zkoušce muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/681698866_18356977465238100_8274879372593078023_n.jpg">
-        <img src="images/681698866_18356977465238100_8274879372593078023_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/soustredeni-behem-zkousky.jpg">
+        <img src="images/zkousky/soustredeni-behem-zkousky.jpg" alt="Soustředění během zkoušky muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/683837578_18356977582238100_4061282703720631980_n.jpg">
-        <img src="images/683837578_18356977582238100_4061282703720631980_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/detail-ze-zkousky.jpg">
+        <img src="images/zkousky/detail-ze-zkousky.jpg" alt="Detail ze zkoušky muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
-      <div class="photo-grid-item" data-lb-src="images/682254994_18356977507238100_622524519147887082_n.jpg">
-        <img src="images/682254994_18356977507238100_622524519147887082_n.jpg" alt="Fotky ze zkoušení" loading="lazy">
-      </div>
-            <div class="photo-grid-item" data-lb-src="images/kostym1.webp">
-        <img src="images/kostym1.webp" alt="Návrhy kostýmů" loading="lazy">
-      </div>
-      <div class="photo-grid-item" data-lb-src="images/kostym2.webp">
-        <img src="images/kostym2.webp" alt="Návrhy kostýmů" loading="lazy">
-      </div>
-      <div class="photo-grid-item" data-lb-src="images/kostym3.webp">
-        <img src="images/kostym3.webp" alt="Návrhy kostýmů" loading="lazy">
-      </div>
-      <div class="photo-grid-item" data-lb-src="images/kostym4.webp">
-        <img src="images/kostym4.webp" alt="Návrhy kostýmů" loading="lazy">
-      </div>
-      <div class="photo-grid-item" data-lb-src="images/scena1.webp">
-        <img src="images/scena1.webp" alt="Návrhy scény" loading="lazy">
+      <div class="photo-grid-item tile" data-lb-src="images/zkousky/zaber-ze-zkousek.jpg">
+        <img src="images/zkousky/zaber-ze-zkousek.jpg" alt="Záběr ze zkoušek muzikálu Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-
+<!-- ── Kostýmy a scénografie ── -->
+<section class="section" aria-label="Kostýmy a scénografie">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2 class="section-title">Kostýmy a scénografie</h2>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="section-subtitle">
+        Kostýmní listy jednotlivých postav a návrh scény — Aleš Kohout. Kliknutím list zvětšíte.
+      </p>
+    </div>
+    <div class="design-grid fade-up" data-gallery>
+      <figure class="design-item" data-lb-src="images/kostymy-a-scena/karolina-meineke-kostym-navrh.webp">
+        <span class="frame frame--link">
+          <img src="images/kostymy-a-scena/karolina-meineke-kostym-navrh.webp" alt="Kostýmní návrh Karoliny Meineke pro muzikál Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
+        </span>
+        <figcaption>Caroline von Linsingen — varianta Pyrmont</figcaption>
+      </figure>
+      <figure class="design-item" data-lb-src="images/kostymy-a-scena/karolina-meineke-kostym-detail.webp">
+        <span class="frame frame--link">
+          <img src="images/kostymy-a-scena/karolina-meineke-kostym-detail.webp" alt="Detail kostýmu Karoliny Meineke pro muzikál Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
+        </span>
+        <figcaption>Karolina Meineke</figcaption>
+      </figure>
+      <figure class="design-item" data-lb-src="images/kostymy-a-scena/karolina-meineke-kostym-textura-strih.webp">
+        <span class="frame frame--link">
+          <img src="images/kostymy-a-scena/karolina-meineke-kostym-textura-strih.webp" alt="Textura a střih kostýmu pro muzikál Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
+        </span>
+        <figcaption>William, vévoda z Clarence</figcaption>
+      </figure>
+      <figure class="design-item" data-lb-src="images/kostymy-a-scena/karolina-meineke-kostym-silueta.webp">
+        <span class="frame frame--link">
+          <img src="images/kostymy-a-scena/karolina-meineke-kostym-silueta.webp" alt="Silueta kostýmu pro muzikál Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
+        </span>
+        <figcaption>Adolph Meineke</figcaption>
+      </figure>
+      <figure class="design-item design-item--wide" data-lb-src="images/kostymy-a-scena/karolina-meineke-scenografie-svetlo.webp">
+        <span class="frame frame--link">
+          <img src="images/kostymy-a-scena/karolina-meineke-scenografie-svetlo.webp" alt="Scénografický návrh pro muzikál Příběh utajené královny v Divadle na Orlí, Brno" loading="lazy">
+        </span>
+        <figcaption>Scénografie a světelný design</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Galerie">
@@ -248,69 +287,54 @@ Muzikál Příběh utajené královny představuje jeho první autorské zpracov
   <button class="lightbox-next" aria-label="Další">›</button>
 </div>
 
-
-
 <!-- ── CTA ── -->
-<div class="cta-banner cta-banner-gold fade-up" id="vstupenky">
-  <div class="container" style="text-align:center;">
+<section class="cta-banner fade-up" id="vstupenky">
+  <div class="container">
     <h2 class="cta-headline">Přijďte zažít příběh, který čekal 200 let</h2>
     <p class="cta-subline">Divadlo na Orlí, Brno</p>
-    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-wine btn-lg">🎟 KOUPIT VSTUPENKY</a>
+    <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket btn-lg">Koupit vstupenky</a>
   </div>
-</div>
+</section>
 
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="nav-logo">Příběh utajené královny<span>Muzikál</span></div>
         <p>Inspirováno skutečným příběhem Karoliny Meineke,
-první tajné manželky anglického krále Viléma IV,
-jejíž osud je spojen s Moravou.<br>
-           Divadelní fakulta JAMU, Ateliér muzikálového herectví Sylvy Talpové a Aleše Kohouta.<br>
-           </p>
+           první tajné manželky anglického krále Viléma IV,
+           jejíž osud je spojen s Moravou.<br>
+           Divadelní fakulta JAMU, Ateliér muzikálového herectví Sylvy Talpové a Aleše Kohouta.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/divadlonaorli/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.instagram.com/divadlonaorli/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/DivadloNaOrli/" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener" aria-label="Divadlo na Orlí"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
+          <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener" aria-label="Divadlo na Orlí"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></a>
         </div>
       </div>
       <div>
         <p class="footer-heading">Navigace</p>
         <ul class="footer-links">
           <li><a href="index.html">Úvod</a></li>
+          <li><a href="o-karoline.html">Karolina Meineke</a></li>
+          <li><a href="o-muzikalu.html" aria-current="page">Muzikál</a></li>
           <li><a href="obsazeni.html">Obsazení</a></li>
-          <li><a href="o-muzikalu.html">O muzikálu</a></li>
-          <li><a href="o-karoline.html">O Karolině Meineke</a></li>
         </ul>
       </div>
       <div>
-        <p class="footer-heading">Premiéra</p>
-        <ul class="footer-links">
-          <li>10. 9. 2026 · 19:00</li>
-          <li>Divadlo na Orlí, Brno</li>
-        </ul>
+        <p class="footer-heading">Hrajeme</p>
+        <p class="footer-date">od září 2026</p>
+        <p class="footer-venue">Divadlo na Orlí, Brno</p>
       </div>
-      <div>
-        <p class="footer-heading">Vstupenky</p>
-        <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:.5rem;">🎟 Koupit vstupenky</a>
-      </div>
-    </div>
-    <div class="footer-support">
-      Realizováno za podpory
-      <a href="https://www.zamek-rajec.cz/cs" target="_blank" rel="noopener">Státního zámku Rájec nad Svitavou</a>
-      , <a href="https://www.muzeum-blanenska.cz/" target="_blank" rel="noopener">Muzea Blanenska</a>, <a href="https://divadlonaorli.jamu.cz/" target="_blank" rel="noopener">Divadla na Orlí</a> a <a href="https://df.jamu.cz/" target="_blank" rel="noopener">Divadelní fakulty JAMU.
-
-      </a>
     </div>
     <div class="footer-bottom">
       <p class="footer-copyright">© 2026 Příběh utajené královny</p>
+      <p class="footer-support">Tento web je nezávislou podporou muzikálu. Oficiální stránka je <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener">divadlonaorli.jamu.cz/pribeh-utajene-kralovny/</a>.</p>
     </div>
   </div>
 </footer>
 
-<div class="sticky-cta" aria-hidden="true">
-  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener">🎟 Koupit vstupenky</a>
+<div class="sticky-cta">
+  <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn-ticket">Koupit vstupenky</a>
 </div>
 
 <script src="js/app.js"></script>
