@@ -41,8 +41,8 @@
   // Aktivní nav odkaz
   const path = location.pathname.replace(/\/$/, '');
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach((a) => {
-    const href = a.getAttribute('href').replace(/\/$/, '');
-    if (href === path || (path === '' && href === 'index.html')) {
+    const href = new URL(a.getAttribute('href'), location.href).pathname.replace(/\/$/, '');
+    if (href === path) {
       a.classList.add('active');
     }
   });

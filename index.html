@@ -19,13 +19,17 @@
   <meta name="twitter:image" content="https://pribehutajenekralovny.com/images/karolina-meineke-muzikal-vizual.webp">
   <meta name="theme-color" content="#FCFAF6">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='90'>👑</text></svg>">
-  <link rel="stylesheet" href="css/fonts.css?v=20260727">
-  <link rel="stylesheet" href="css/style.css?v=20260727">
+  <link rel="stylesheet" href="css/fonts.css?v=20260727b">
+  <link rel="stylesheet" href="css/style.css?v=20260727b">
+  <!-- Hero je CSS pozadí, prohlížeč ho objeví až po stažení stylů. Preload ho
+       vytáhne dopředu, aby se LCP neodkládal o celý round-trip. -->
+  <link rel="preload" as="image" href="images/karolina-meineke-muzikal-vizual.webp" fetchpriority="high">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TheaterEvent",
     "name": "Příběh utajené královny",
+    "url": "https://pribehutajenekralovny.com/",
     "description": "Muzikál o Karolině Meineke, tajné manželce krále Viléma IV. Divadlo na Orlí, Brno.",
     "image": "https://pribehutajenekralovny.com/images/karolina-meineke-muzikal-vizual.webp",
     "startDate": "2026-09-10T19:00:00+02:00",
@@ -56,13 +60,13 @@
 <!-- ── Navbar ── -->
 <nav class="navbar" role="navigation" aria-label="Hlavní navigace">
   <div class="container">
-    <a href="index.html" class="nav-logo">
+    <a href="/" class="nav-logo">
       Příběh utajené královny
       <span>Divadelní fakulta JAMU · Divadlo na Orlí</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active" aria-current="page">Úvod</a></li>
-      <li><a href="o-karoline.html">Karolina Meineke</a></li>
+      <li><a href="/" class="active" aria-current="page">Úvod</a></li>
+      <li><a href="karolina-meineke.html">Karolina Meineke</a></li>
       <li><a href="o-muzikalu.html">Muzikál</a></li>
       <li><a href="obsazeni.html">Obsazení</a></li>
     </ul>
@@ -76,8 +80,8 @@
 <!-- Mobile menu -->
 <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobilní navigace">
   <button class="mobile-menu-close" aria-label="Zavřít menu">✕</button>
-  <a href="index.html" aria-current="page">Úvod</a>
-  <a href="o-karoline.html">Karolina Meineke</a>
+  <a href="/" aria-current="page">Úvod</a>
+  <a href="karolina-meineke.html">Karolina Meineke</a>
   <a href="o-muzikalu.html">Muzikál</a>
   <a href="obsazeni.html">Obsazení</a>
   <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn btn-primary btn-ticket">Koupit vstupenky</a>
@@ -268,7 +272,7 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
       <!-- Zobrazeno pouze prvních 4 články na hlavní stránce; zbytek zůstává na stránce Karolina Meineke -->
     </div>
     <div class="fade-up" style="text-align:center; margin-top:3rem;">
-      <a href="o-karoline.html" class="btn btn-outline btn-lg">Více o Karolině Meineke</a>
+      <a href="karolina-meineke.html" class="btn btn-outline btn-lg">Více o Karolině Meineke</a>
     </div>
   </div>
 </section>
@@ -312,8 +316,8 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
       <div>
         <p class="footer-heading">Rozcestník</p>
         <ul class="footer-links">
-          <li><a href="index.html" aria-current="page">Úvod</a></li>
-          <li><a href="o-karoline.html">Karolina Meineke</a></li>
+          <li><a href="/" aria-current="page">Úvod</a></li>
+          <li><a href="karolina-meineke.html">Karolina Meineke</a></li>
           <li><a href="o-muzikalu.html">Muzikál</a></li>
           <li><a href="obsazeni.html">Obsazení</a></li>
         </ul>
@@ -336,6 +340,6 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
   <a href="https://goout.net/cs/pribeh-utajene-kralovny/ezqadri/" target="_blank" rel="noopener" class="btn-ticket">Koupit vstupenky</a>
 </div>
 
-<script src="js/app.js?v=20260727"></script>
+<script src="js/app.js?v=20260727b"></script>
 </body>
 </html>
