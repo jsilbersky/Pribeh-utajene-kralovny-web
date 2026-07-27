@@ -101,7 +101,7 @@
   const prev   = lightbox.querySelector('.lightbox-prev');
   const next   = lightbox.querySelector('.lightbox-next');
 
-  // Popisek — vytvoří se jen jednou, není potřeba ho mít v HTML
+  // Popisek – vytvoří se jen jednou, není potřeba ho mít v HTML
   let caption = lightbox.querySelector('.lightbox-caption');
   if (!caption) {
     caption = document.createElement('div');
@@ -151,7 +151,7 @@
   document.querySelectorAll('[data-gallery]').forEach((group) => {
     const items = [...group.querySelectorAll('[data-lb-src]')];
     const srcs = items.map((el) => el.dataset.lbSrc);
-    // [data-no-caption] — galerie bez popisků (alt zůstává kvůli přístupnosti)
+    // [data-no-caption] – galerie bez popisků (alt zůstává kvůli přístupnosti)
     const noCaption = group.hasAttribute('data-no-caption');
     const caps = items.map((el) => {
       if (noCaption) return '';
@@ -173,6 +173,77 @@
   window.openLightbox = open;
 })();
 
+// Modal „O tomto webu“ – spouští ho odkaz „nezávislou podporou“ v patičce
+/* Obsah je tady, a ne v HTML, aby existoval jen jednou pro celý web –
+   stejný princip jako createPhotoModal() v js/cast.js. */
+(function () {
+  const triggers = document.querySelectorAll('.about-trigger');
+  if (!triggers.length) return;
+
+  let modal = null;
+  let lastFocused = null;
+
+  function build() {
+    modal = document.createElement('div');
+    modal.className = 'about-modal';
+    modal.innerHTML = `
+      <div class="about-modal-inner" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+        <button type="button" class="about-modal-close" aria-label="Zavřít">✕</button>
+        <div class="about-modal-body">
+          <p class="eyebrow">O tomto webu</p>
+          <h2 class="about-modal-title" id="about-modal-title">Nezávislá podpora muzikálu</h2>
+          <div class="rule rule--left" aria-hidden="true"></div>
+          <p>Tento projekt slouží jako nezávislá podpora muzikálu Příběh utajené královny. Nejedná se o oficiální prezentaci inscenace. Autor webu není provozovatelem ani zástupcem Divadla na Orlí či JAMU. Veškeré oficiální informace naleznete na webu <a href="https://divadlonaorli.jamu.cz/pribeh-utajene-kralovny/" target="_blank" rel="noopener">divadlonaorli.jamu.cz</a>.</p>
+
+          <h3 class="about-modal-sub">Ochrana osobních údajů</h3>
+          <p>Web je navržen s maximálním ohledem na vaše soukromí. Nevyužíváme cookies, analytické nástroje ani neukládáme žádná uživatelská data. Nepožadujeme proto žádné odsouhlasení formou vyskakovacích oken.</p>
+          <p>S vašimi údaji (IP adresou) přicházejí do styku pouze poskytovatelé následujících technických řešení:</p>
+          <ul class="about-modal-list">
+            <li><strong>Cloudflare</strong>: Poskytuje zabezpečení a doručování obsahu webu.</li>
+            <li><strong>YouTube</strong>: Data zpracovává až po manuálním spuštění vloženého videa.</li>
+            <li><strong>Mapy.cz</strong>: Data zpracovává až po aktivním otevření mapy.</li>
+          </ul>
+
+          <h3 class="about-modal-sub">Kontakt</h3>
+          <p><a href="mailto:jsilbersky@gmail.com">jsilbersky@gmail.com</a></p>
+        </div>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.querySelector('.about-modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  }
+
+  function openModal() {
+    if (!modal) build();
+    lastFocused = document.activeElement;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.about-modal-close').focus();
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  // Escape zavírá; Tab cykluje uvnitř okna, aby fokus neutekl na stránku pod ním
+  function onKeydown(e) {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    const focusable = modal.querySelectorAll('button, a[href]');
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  triggers.forEach((t) => t.addEventListener('click', openModal));
+})();
+
 // IntersectionObserver pro .fade-up a cast/act/timeline
 window.observeFadeUp = function observeFadeUp() {
   const io = new IntersectionObserver((entries) => {
@@ -191,6 +262,8 @@ window.observeFadeUp = function observeFadeUp() {
 document.addEventListener('DOMContentLoaded', window.observeFadeUp);
 
 // Lazy YouTube embed (nahradí placeholder kliknutím)
+/* Náhledový obrázek je lokální (images/), embed je youtube-nocookie a vzniká
+   až po kliknutí – na Google tedy nic neodchází, dokud si video nepustíš. */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.video-placeholder').forEach((placeholder) => {
     const wrapper = placeholder.closest('.video-wrapper');
@@ -199,11 +272,33 @@ document.addEventListener('DOMContentLoaded', () => {
     placeholder.addEventListener('click', () => {
       const iframe = document.createElement('iframe');
       iframe.src = src + '?autoplay=1';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.title = 'Trailer k muzikálu Příběh utajené královny';
+      // Jen to, co přehrávání opravdu potřebuje – bez clipboard-write,
+      // accelerometer a gyroscope, které měl embed dřív zbytečně povolené.
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
       iframe.allowFullscreen = true;
       iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
       wrapper.appendChild(iframe);
       placeholder.style.display = 'none';
+    });
+  });
+});
+
+// Lazy mapa (stejný princip jako u videa – iframe až po kliknutí)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.map-placeholder').forEach((placeholder) => {
+    const src = placeholder.dataset.mapSrc;
+    if (!src) return;
+    placeholder.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.className = 'map-iframe';
+      iframe.src = src;
+      iframe.title = 'Mapa památníku Karoliny Meineke v Blansku';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer';
+      iframe.allowFullscreen = true;
+      placeholder.replaceWith(iframe);
     });
   });
 });
