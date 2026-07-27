@@ -539,8 +539,8 @@ em { font-style: italic; }
   }
 }
 @media (max-width: 720px) {
-  .hero { padding: calc(var(--nav-height) + 1.5rem) 0 2.5rem; }
-  /* Na výšku posouváme záběr na tvář Karoliny — pečeť a dopisy vlevo z kraje mizí */
+  /* Text držíme dole, aby neležel přes tvář Karoliny výš v záběru */
+  .hero { padding: calc(var(--nav-height) + 1.5rem) 0 2.5rem; align-items: flex-end; }
   .hero-bg-img, .hero-media { background-position: 55% 35%; }
   .hero-overlay, .hero-veil {
     background:
