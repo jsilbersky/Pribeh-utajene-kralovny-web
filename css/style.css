@@ -51,6 +51,7 @@ html {
   font-size: 16px;
   scroll-padding-top: calc(var(--nav-height) + 1rem);
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 body {
   font-family: 'Jost', system-ui, sans-serif;
@@ -1230,7 +1231,6 @@ em { font-style: italic; }
 .footer-support {
   font-size: .72rem; line-height: 1.4;
   color: var(--ink-62); margin: 0;
-  white-space: nowrap;
 }
 .footer-support a {
   color: var(--crimson);
