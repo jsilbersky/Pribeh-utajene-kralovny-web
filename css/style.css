@@ -1,27 +1,27 @@
 /* =============================================================
-   Příběh utajené královny — vizuální systém
+   Příběh utajené královny – vizuální systém
    -------------------------------------------------------------
    DVĚ PÍSMA
      EB Garamond ........... nadpisy, citáty, jména (display)
-       — nízký kontrast tahů, takže zůstává čitelný i v malém
+       – nízký kontrast tahů, takže zůstává čitelný i v malém
          stupni; české diakritice sedí bez kompromisů
      Jost .................. text, popisky, tlačítka, navigace
    ČTYŘI BARVY
      pergamen (světlé pozadí) · inkoust (text a tmavý sokl)
-     karmín (pečeť — akcent)  · zlato (vlasové linky, ornamenty)
+     karmín (pečeť – akcent)  · zlato (vlasové linky, ornamenty)
    ============================================================= */
 
 /* ── Tokeny ─────────────────────────────────────────────────── */
 :root {
-  /* 1 — pergamen: dva odstíny jednoho světlého podkladu */
+  /* 1 – pergamen: dva odstíny jednoho světlého podkladu */
   --ivory:        #FCFAF6;
   --parchment:    #F4EDE1;
-  /* 2 — inkoust */
+  /* 2 – inkoust */
   --ink:          #2B211B;
-  /* 3 — karmín (pečetní vosk z plakátu) */
+  /* 3 – karmín (pečetní vosk z plakátu) */
   --crimson:      #8E2233;
   --crimson-deep: #6E1927;
-  /* 4 — zlato (jen ornament, nikdy drobný text) */
+  /* 4 – zlato (jen ornament, nikdy drobný text) */
   --gold:         #B08D46;
 
   /* Odvozené odstíny */
@@ -114,7 +114,7 @@ em { font-style: italic; }
 .text-left .section-subtitle,
 .section-subtitle.is-left { margin-left: 0; }
 
-/* Nadřazený štítek — kapitálky */
+/* Nadřazený štítek – kapitálky */
 .eyebrow, .hero-label, .page-hero-eyebrow, .playbill-eyebrow,
 .creator-role, .act-number, .footer-heading, .tl-year {
   font-family: 'Jost', sans-serif;
@@ -160,7 +160,7 @@ em { font-style: italic; }
 
 .section { padding: clamp(4.5rem, 8.5vw, 7.5rem) 0; background: var(--ivory); }
 .section-tight-top { padding-top: clamp(2rem, 3.2vw, 3rem); }
-/* Jediné dva podklady na celém webu — pergamen světlý / pergamen teplý */
+/* Jediné dva podklady na celém webu – pergamen světlý / pergamen teplý */
 .section-dark,
 .section-light   { background: var(--ivory); }
 .section-smoke,
@@ -175,7 +175,7 @@ em { font-style: italic; }
 .section-head--left .section-subtitle { margin-left: 0; }
 
 /* ── Rámečky pro obrázky ────────────────────────────────────── */
-/* .frame — pasparta s dvojitou vlasovou linkou (portréty, listy, dokumenty) */
+/* .frame – pasparta s dvojitou vlasovou linkou (portréty, listy, dokumenty) */
 .frame {
   position: relative;
   display: block;
@@ -199,7 +199,7 @@ em { font-style: italic; }
   box-shadow: var(--shadow-md);
 }
 
-/* .tile — bezrámový výřez s vlasovou linkou (mřížky fotografií) */
+/* .tile – bezrámový výřez s vlasovou linkou (mřížky fotografií) */
 .tile {
   position: relative; overflow: hidden; cursor: pointer;
   background: var(--parchment);
@@ -240,7 +240,7 @@ em { font-style: italic; }
               box-shadow .35s var(--ease);
 }
 
-/* Primární — karmínová pečeť */
+/* Primární – karmínová pečeť */
 .btn-primary, .btn-gold, .btn-wine, .btn-crimson {
   background: var(--crimson);
   color: var(--ivory);
@@ -253,7 +253,7 @@ em { font-style: italic; }
   box-shadow: 0 14px 28px -14px rgba(142,34,51,.6);
 }
 
-/* Sekundární — vlasový obrys */
+/* Sekundární – vlasový obrys */
 .btn-outline, .btn-ghost {
   background: transparent;
   color: var(--ink);
@@ -278,7 +278,7 @@ em { font-style: italic; }
 .btn-sm { padding: .7rem 1.5rem;  font-size: .66rem; letter-spacing: .16em; }
 .btn:disabled { opacity: .4; cursor: not-allowed; transform: none !important; }
 
-/* Ikona vstupenky — jedno místo pro celý web (nahrazuje emoji) */
+/* Ikona vstupenky – jedno místo pro celý web (nahrazuje emoji) */
 .btn-ticket::before {
   content: '';
   width: 15px; height: 15px; flex: none;
@@ -426,7 +426,7 @@ em { font-style: italic; }
 
 /* ── Hero (úvodní stránka) ──────────────────────────────────── */
 /* Jediný hero na webu. Vizuál je sám o sobě světlý (pergamenové
-   dopisy vlevo, portrét vpravo) — text sedí na jeho světlé půlce
+   dopisy vlevo, portrét vpravo) – text sedí na jeho světlé půlce
    pod jemným pergamenovým závojem.                              */
 /* Vyplní celou obrazovku na všech zařízeních. svh = malý viewport,
    takže na mobilu nic nepřečnívá pod lištu prohlížeče.            */
@@ -452,7 +452,7 @@ em { font-style: italic; }
   to   { transform: scale(1.05); }
 }
 
-/* Závoj je jen tak silný, aby text držel — obraz zůstává čitelný.
+/* Závoj je jen tak silný, aby text držel – obraz zůstává čitelný.
    Radiál navíc prosvětlí jen místo, kde text leží přes pečeť.     */
 .hero-overlay, .hero-veil {
   position: absolute; top: var(--nav-height); right: 0; bottom: 0; left: 0;
@@ -479,7 +479,7 @@ em { font-style: italic; }
   display: flex; flex-direction: column; align-items: flex-start;
   text-align: left;
 }
-/* Světelná svatozář místo tmavého stínu — drží text nad fotkou,
+/* Světelná svatozář místo tmavého stínu – drží text nad fotkou,
    aniž by ji ztmavovala */
 .hero-label, .hero-title, .hero-subtitle {
   text-shadow: 0 1px 14px rgba(252,250,246,.92), 0 0 34px rgba(252,250,246,.75);
@@ -588,7 +588,7 @@ em { font-style: italic; }
 }
 
 /* ── Záhlaví podstránek ─────────────────────────────────────── */
-/* Bez fotografie — hero patří jen na úvod. Podstránky otevírá
+/* Bez fotografie – hero patří jen na úvod. Podstránky otevírá
    klidný pergamenový pás, který nezdržuje cestu k obsahu.        */
 .page-head, .page-hero, .caroline-hero {
   position: relative; overflow: hidden;
@@ -628,7 +628,7 @@ em { font-style: italic; }
   color: var(--ink-62);
   max-width: 56ch; margin: 0 auto;
 }
-/* Skryjeme staré fotopozadí podstránek — jednotný podklad */
+/* Skryjeme staré fotopozadí podstránek – jednotný podklad */
 .page-hero-bg, .page-hero-overlay,
 .caroline-hero-bg, .caroline-hero-overlay { display: none; }
 
@@ -650,7 +650,7 @@ em { font-style: italic; }
   text-align: center;
   position: relative;
 }
-/* Citát je vysazený jako tištěné motto — bez dekorací navíc,
+/* Citát je vysazený jako tištěné motto – bez dekorací navíc,
    uvozovky nese samotný text a ornament ho zdola uzavírá. */
 .quote-text {
   position: relative;
@@ -767,7 +767,12 @@ em { font-style: italic; }
 .photo-grid--stage .photo-grid-item { aspect-ratio: 3/2; }
 .photo-grid-item img { object-position: center center; }
 
-/* Historická galerie — portréty v paspartě */
+/* Focení na zámku – na výšku i na šířku v jedné mřížce, proto čtverec */
+.photo-grid--square .photo-grid-item { aspect-ratio: 1; }
+/* Výřez mírně nad středem – u celofigurových snímků drží tváře v obraze */
+.photo-grid--square .photo-grid-item img { object-position: center 32%; }
+
+/* Historická galerie – portréty v paspartě */
 .historical-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .hist-item img { aspect-ratio: 3/4; object-fit: cover; object-position: center top; }
 .hist-item figcaption {
@@ -775,7 +780,7 @@ em { font-style: italic; }
   color: var(--ink-45); text-align: center;
 }
 
-/* Kostýmní listy — dva a dva; návrh scény pak sám pod nimi */
+/* Kostýmní listy a návrhy scény – dva a dva */
 .design-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -784,10 +789,6 @@ em { font-style: italic; }
   justify-items: center;
 }
 .design-item { margin: 0; width: 100%; max-width: 380px; }
-.design-item--wide {
-  grid-column: 1 / -1;
-  margin-top: clamp(.5rem, 2vw, 1.5rem);
-}
 .design-item figcaption {
   padding: .85rem .2rem 0;
   font-size: .76rem; line-height: 1.5; letter-spacing: .02em;
@@ -817,7 +818,7 @@ em { font-style: italic; }
   .design-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
-/* ── Karty článků — dvě na řádek ────────────────────────────── */
+/* ── Karty článků – dvě na řádek ────────────────────────────── */
 .article-grid {
   display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
   gap: clamp(1.25rem, 2.5vw, 2rem);
@@ -877,6 +878,40 @@ em { font-style: italic; }
 }
 .map-iframe { width: 100%; height: 100%; min-height: 388px; border: 0; display: block; }
 
+/* Placeholder, který mapu nahrazuje, dokud na ni návštěvník neklikne */
+.map-placeholder {
+  width: 100%; min-height: 388px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 2rem 1.5rem; text-align: center;
+  background: var(--parchment);
+  color: var(--ink-62);
+  transition: background-color .35s var(--ease);
+}
+.map-placeholder:hover { background: var(--ivory); }
+.map-placeholder .map-pin {
+  color: var(--crimson); margin-bottom: .85rem;
+  transition: transform .35s var(--ease);
+}
+.map-placeholder:hover .map-pin { transform: translateY(-3px); }
+.map-placeholder-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem; color: var(--ink);
+}
+.map-placeholder-sub { font-size: .9rem; letter-spacing: .04em; }
+.map-placeholder-cta {
+  margin-top: 1.15rem; padding: .5rem 1.4rem;
+  font-size: .78rem; letter-spacing: .13em; text-transform: uppercase;
+  color: var(--crimson);
+  border: 1px solid var(--line-gold);
+  transition: background-color .35s var(--ease), color .35s var(--ease);
+}
+.map-placeholder:hover .map-placeholder-cta { background: var(--crimson); color: var(--ivory); }
+.map-placeholder-note {
+  margin-top: 1.1rem; max-width: 28ch;
+  font-size: .76rem; line-height: 1.55; color: var(--ink-45);
+}
+
 /* ── Obsazení ───────────────────────────────────────────────── */
 /* Vždy dva herci na řádek */
 .cast-grid {
@@ -910,7 +945,7 @@ em { font-style: italic; }
   gap: clamp(2.5rem, 6vw, 5rem); align-items: start;
 }
 .credits-table { max-width: 620px; }
-/* Funkce vlevo, jméno vpravo — mezi nimi jen vzduch, žádné tečky */
+/* Funkce vlevo, jméno vpravo – mezi nimi jen vzduch, žádné tečky */
 .credit-row {
   display: flex; align-items: baseline; justify-content: space-between;
   gap: 1.5rem;
@@ -942,7 +977,7 @@ em { font-style: italic; }
 .annotation { margin-top: 1.75rem; }
 .annotation p { font-size: 1.03rem; line-height: 1.92; color: var(--ink-80); }
 .annotation p em { font-family: 'EB Garamond', serif; font-style: italic; color: var(--ink); }
-/* Perex serifem — jen tam, kde je první odstavec krátký (opt-in) */
+/* Perex serifem – jen tam, kde je první odstavec krátký (opt-in) */
 .annotation--intro p:first-of-type {
   font-family: 'EB Garamond', serif;
   font-size: clamp(1.25rem, 1.85vw, 1.55rem);
@@ -1103,7 +1138,7 @@ em { font-style: italic; }
 }
 
 /* ── Tiráž na pergamenu ─────────────────────────────────────────
-   Tmavý sokl končí CTA — patička je světlá, aby tmavá zůstala
+   Tmavý sokl končí CTA – patička je světlá, aby tmavá zůstala
    rezervovaná jedinému místu, které má konvertovat. Tři úrovně
    textu (ink / ink-80 / ink-62) a dvě linky, nic víc.            */
 .footer {
@@ -1113,7 +1148,7 @@ em { font-style: italic; }
   padding: 0 0 clamp(1.5rem, 2.5vw, 2rem);
   font-size: .9rem;
 }
-/* Zlacená hrana na švu mezi tmavým CTA a tiráží — na světlém
+/* Zlacená hrana na švu mezi tmavým CTA a tiráží – na světlém
    podkladu musí být sytější než vlasové linky uvnitř sekcí,
    jinak se v tom kontrastním švu úplně ztratí.                   */
 .footer::before {
@@ -1138,7 +1173,7 @@ em { font-style: italic; }
   font-size: .56rem; letter-spacing: .3em;
   color: var(--ink-45); margin-top: .55rem;
 }
-/* Jediný ornament v tiráži — krátká zlatá linka pod logem */
+/* Jediný ornament v tiráži – krátká zlatá linka pod logem */
 .footer-brand .nav-logo::after {
   content: ''; display: block; width: 46px; height: 1px;
   margin-top: 1.1rem;
@@ -1159,13 +1194,13 @@ em { font-style: italic; }
   transition: color .3s var(--ease), border-color .3s var(--ease),
               background-color .3s var(--ease), transform .3s var(--ease);
 }
-/* Karmín jako pečeť — zlatá plocha je na pergamenu kalná */
+/* Karmín jako pečeť – zlatá plocha je na pergamenu kalná */
 .footer-socials a:hover {
   color: var(--ivory); background: var(--crimson); border-color: var(--crimson);
   transform: translateY(-2px);
 }
 
-/* Sloupce — nadpisy dědí .eyebrow (karmín, kapitálky), bez podtržení */
+/* Sloupce – nadpisy dědí .eyebrow (karmín, kapitálky), bez podtržení */
 .footer-heading {
   margin-bottom: 1.4rem;
   font-size: .855rem;
@@ -1192,7 +1227,7 @@ em { font-style: italic; }
   font-size: .855rem;
 }
 
-/* Premiéra — datum a místo mají stejný font a velikost */
+/* Premiéra – datum a místo mají stejný font a velikost */
 .footer-date,
 .footer-venue {
   font-family: 'Jost', system-ui, sans-serif;
@@ -1210,7 +1245,7 @@ em { font-style: italic; }
   margin-top: .5rem;
 }
 
-/* Poděkování a copyright pod sebou — copyright vlevo, podpora v malém textu */
+/* Poděkování a copyright pod sebou – copyright vlevo, podpora v malém textu */
 .footer-bottom {
   display: flex; flex-direction: column; align-items: flex-start;
   gap: .45rem;
@@ -1232,12 +1267,17 @@ em { font-style: italic; }
   font-size: .72rem; line-height: 1.4;
   color: var(--ink-62); margin: 0;
 }
-.footer-support a {
+.footer-support a,
+.footer-support .about-trigger {
   color: var(--crimson);
   border-bottom: 1px solid rgba(142,34,51,.28);
   transition: color .25s var(--ease), border-color .25s var(--ease);
 }
-.footer-support a:hover { color: var(--crimson-deep); border-bottom-color: var(--crimson-deep); }
+.footer-support a:hover,
+.footer-support .about-trigger:hover { color: var(--crimson-deep); border-bottom-color: var(--crimson-deep); }
+/* Spouštěč modalu je <button>, aby fungovala klávesnice – musí ale
+   vypadat jako okolní text, ne jako tlačítko */
+.footer-support .about-trigger { font: inherit; padding: 0; }
 
 .footer-copyright {
   display: flex; align-items: center; gap: .7rem; flex: none;
@@ -1363,3 +1403,76 @@ em { font-style: italic; }
     .photo-modal { padding: 1rem; }
     .photo-modal .photo-modal-img { max-width: 96vw; max-height: 80vh; }
   }
+
+/* ── Modal „O tomto webu“ ───────────────────────────────────── */
+/* Obsah se skládá v js/app.js, aby existoval jen jednou pro celý web.
+   Spouští ho odkaz „nezávislou podporou“ v patičce. */
+.about-modal {
+  display: none; position: fixed; inset: 0; z-index: 2400;
+  align-items: center; justify-content: center;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: rgba(43,33,27,.62);
+}
+.about-modal.open { display: flex; }
+
+.about-modal-inner {
+  position: relative;
+  display: flex; flex-direction: column;
+  width: min(640px, 100%);
+  max-height: min(84vh, 100%);
+  background: var(--ivory);
+  border: 1px solid var(--line-gold);
+  box-shadow: var(--shadow-lg);
+}
+/* Scrolluje jen obsah, zavírací křížek zůstává na místě */
+.about-modal-body {
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  padding: clamp(1.75rem, 4.5vw, 2.85rem);
+}
+.about-modal-close {
+  position: absolute; top: .5rem; right: .6rem; z-index: 2;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--ink-45);
+  transition: color .25s var(--ease);
+}
+.about-modal-close:hover { color: var(--crimson); }
+
+.about-modal-title {
+  font-size: clamp(1.5rem, 4.2vw, 1.95rem);
+  margin-top: .3rem; padding-right: 2rem;
+}
+.about-modal-sub { font-size: 1.12rem; margin: 1.9rem 0 .5rem; }
+.about-modal-body .rule--left { margin: 1rem 0 1.4rem; }
+.about-modal-body p { font-size: .93rem; line-height: 1.75; color: var(--ink-80); }
+.about-modal-body strong { color: var(--ink); font-weight: 500; }
+.about-modal-body a {
+  color: var(--crimson);
+  border-bottom: 1px solid rgba(142,34,51,.28);
+  transition: color .25s var(--ease), border-color .25s var(--ease);
+}
+.about-modal-body a:hover { color: var(--crimson-deep); border-bottom-color: var(--crimson-deep); }
+
+.about-modal-list {
+  margin-top: .9rem; display: grid; gap: .6rem;
+  font-size: .88rem; line-height: 1.65; color: var(--ink-62);
+}
+.about-modal-list li { position: relative; padding-left: 1.1rem; }
+.about-modal-list li::before {
+  content: ''; position: absolute; left: 0; top: .62em;
+  width: 4px; height: 4px; background: var(--gold); transform: rotate(45deg);
+}
+
+/* Na mobilu karta u spodního okraje – blíž palci, ale s viditelným
+   okrajem kolem dokola, aby okno nepůsobilo jako celá obrazovka */
+@media (max-width: 560px) {
+  .about-modal { padding: 1rem; align-items: flex-end; }
+  .about-modal-inner {
+    width: 100%;
+    max-height: 72vh;
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+  .about-modal-body { padding: 1.75rem 1.35rem 2rem; }
+  .about-modal-title { font-size: 1.42rem; }
+  .about-modal-sub { font-size: 1.02rem; margin-top: 1.5rem; }
+}

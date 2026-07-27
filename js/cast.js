@@ -1,5 +1,5 @@
 /* ── Stránka Obsazení ── */
-/* Obsazení je natvrdo v HTML (obsazeni.html) kvůli SEO — skript jen dokresluje
+/* Obsazení je natvrdo v HTML (obsazeni.html) kvůli SEO – skript jen dokresluje
    chování: zvětšení fotky po kliknutí a fallback na hlavní vizuál, když fotka chybí. */
 
 const PORTRAIT_PH = 'images/karolina-meineke-muzikal-vizual.webp';

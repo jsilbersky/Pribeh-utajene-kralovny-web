@@ -1,6 +1,6 @@
 /* ── Časová osa (o-karoline.html) ── */
 /* Obsah časové osy je natvrdo v HTML (o-karoline.html) kvůli SEO. Fotky v ose
-   používají standardní [data-gallery]/[data-lb-src] lightbox z app.js — skript
+   používají standardní [data-gallery]/[data-lb-src] lightbox z app.js – skript
    tady jen dokresluje postupně se vyplňující čáru při scrollování. */
 
 document.addEventListener('DOMContentLoaded', () => {
