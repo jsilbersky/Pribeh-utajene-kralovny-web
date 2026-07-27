@@ -385,15 +385,22 @@ evropskou aristokracií a vyrůstá v mimořádně vzdělanou a citlivou ženu.<
         </p>
       </div>
       <div class="map-card">
-        <!-- Mapa se načte z Mapy.com až po kliknutí (viz app.js) – do té doby
-             na Seznam neodchází požadavek s IP adresou návštěvníka. -->
-        <button type="button" class="map-placeholder" data-map-src="https://mapy.com/s/butarohaju">
-          <svg class="map-pin" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="map-placeholder-title">Památník Karoliny Meineke</span>
-          <span class="map-placeholder-sub">Blansko</span>
-          <span class="map-placeholder-cta">Zobrazit mapu</span>
-          <span class="map-placeholder-note">Mapa se načte z Mapy.com až po kliknutí.</span>
-        </button>
+        <!-- Náhled je statický obrázek z našeho serveru (dlaždice OpenStreetMap).
+             Interaktivní mapa se načte z Mapy.com až po kliknutí (viz app.js) –
+             do té doby na Seznam neodchází požadavek s IP adresou návštěvníka. -->
+        <div class="map-embed">
+          <button type="button" class="map-placeholder" data-map-src="https://mapy.com/s/butarohaju">
+            <img class="map-preview" src="images/pamatnik-blansko-mapa-nahled.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" width="1120" height="800">
+            <span class="map-placeholder-body">
+              <svg class="map-pin" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="map-placeholder-title">Památník Karoliny Meineke</span>
+              <span class="map-placeholder-sub">Staré Blansko, kostel sv. Martina</span>
+              <span class="map-placeholder-cta">Zobrazit interaktivní mapu</span>
+              <span class="map-placeholder-note">Mapa se načte z Mapy.com až po kliknutí.</span>
+            </span>
+          </button>
+          <a class="map-attrib" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">Náhled © OpenStreetMap</a>
+        </div>
       </div>
     </div>
   </div>

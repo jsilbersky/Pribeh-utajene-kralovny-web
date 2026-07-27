@@ -298,7 +298,15 @@ document.addEventListener('DOMContentLoaded', () => {
       iframe.loading = 'lazy';
       iframe.referrerPolicy = 'no-referrer';
       iframe.allowFullscreen = true;
-      placeholder.replaceWith(iframe);
+      // Náhled i uvedení zdroje dlaždic nahradíme celé – interaktivní mapa má
+      // vlastní atribuci.
+      const embed = placeholder.closest('.map-embed');
+      if (embed) {
+        embed.textContent = '';
+        embed.appendChild(iframe);
+      } else {
+        placeholder.replaceWith(iframe);
+      }
     });
   });
 });
