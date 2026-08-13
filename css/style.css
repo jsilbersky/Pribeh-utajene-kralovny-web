@@ -30,6 +30,8 @@
   --ink-45:   rgba(43,33,27,.45);
   --line:     rgba(43,33,27,.13);
   --line-2:   rgba(43,33,27,.07);
+  /* výraznější linka – obrys tlačítek, aby byla plocha jasně čitelná */
+  --line-strong: rgba(43,33,27,.32);
   --line-gold:rgba(176,141,70,.42);
   --gold-soft:rgba(176,141,70,.16);
   --ivory-70: rgba(252,250,246,.70);
@@ -257,7 +259,7 @@ em { font-style: italic; }
 .btn-outline, .btn-ghost {
   background: transparent;
   color: var(--ink);
-  border-color: var(--line);
+  border-color: var(--line-strong);
 }
 .btn-outline:hover, .btn-ghost:hover {
   background: var(--ink);
@@ -1046,6 +1048,9 @@ em { font-style: italic; }
   gap: clamp(2.25rem, 5vw, 4.5rem); align-items: center;
 }
 .feature-grid .frame img { aspect-ratio: 1; object-fit: cover; }
+/* Portrét na výšku (autor) – stejný poměr jako karty herců, aby nebyl uříznut v ramenech */
+.feature-grid .frame--portrait { max-width: 460px; margin-left: auto; }
+.feature-grid .frame--portrait img { aspect-ratio: 3 / 4; }
 
 /* ── Časová osa ─────────────────────────────────────────────── */
 .timeline-section { padding: clamp(4.5rem, 8.5vw, 7.5rem) 0; }
