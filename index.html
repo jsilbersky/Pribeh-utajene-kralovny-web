@@ -20,8 +20,8 @@
   <meta name="theme-color" content="#FCFAF6">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
-  <link rel="stylesheet" href="css/fonts.css?v=20260727b">
-  <link rel="stylesheet" href="css/style.css?v=20260727b">
+  <link rel="stylesheet" href="css/fonts.css?v=20260825c">
+  <link rel="stylesheet" href="css/style.css?v=20260825c">
   <!-- Hero je CSS pozadí, prohlížeč ho objeví až po stažení stylů. Preload ho
        vytáhne dopředu, aby se LCP neodkládal o celý round-trip. -->
   <link rel="preload" as="image" href="images/karolina-meineke-muzikal-vizual.webp" fetchpriority="high">
@@ -186,6 +186,49 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
   </div>
 </section>
 
+<!-- ── Muzikál v médiích ──
+     Nový článek = přidat další .article-card na začátek (nejnovější první).
+     Grid je dvousloupcový, proto na homepage držet SUDÝ počet karet (2, 4, 6),
+     jinak zůstane poslední karta osamocená v řádku.
+     Náhled ber z images/media/ (zmenšené kopie produkčních fotek, 900x600).
+     Když redakce použije fotku, kterou web nemá, vyber jinou produkční fotku
+     z images/foceni-na-zamku/ nebo images/inscenace/ – NEKOPÍRUJ fotografie
+     cizích redakcí. -->
+<section class="section section-tight-top press-section" id="v-mediich" aria-label="Muzikál v médiích">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2 class="section-title">Muzikál v médiích</h2>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+    <div class="article-grid fade-up">
+      <a class="article-card" href="https://blanensky.denik.cz/zpravy-region/tajna-manzelka-budouciho-krale-zila-v-blansku-jeji-pribeh-ozije-v-muzikalu/" target="_blank" rel="noopener">
+        <span class="article-thumb">
+          <img src="images/media/blanensky-denik-nahled.jpg" alt="" width="900" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="article-meta">
+          <span class="article-source">Blanenský deník</span>
+          <time class="article-date" datetime="2026-08-24">24. 8. 2026</time>
+        </span>
+        <h3 class="article-title">Tajná manželka budoucího krále žila v Blansku. Její příběh ožije v muzikálu</h3>
+        <p class="article-excerpt">Tajně se provdala za budoucího anglického krále, porodila mu syna a později málem skončila v hrobě zaživa. Nakonec se její životní cesta spojila s Blanskem, kde také zemřela.</p>
+        <span class="link-arrow">Číst článek</span>
+      </a>
+      <a class="article-card" href="https://www.blansko.cz/pribeh-utajene-kralovny-z-blanska-ztvarni-novy-muzikal-studentu-jamu" target="_blank" rel="noopener">
+        <span class="article-thumb">
+          <img src="images/media/blansko-cz-nahled.jpg" alt="" width="900" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="article-meta">
+          <span class="article-source">Blansko.cz</span>
+          <time class="article-date" datetime="2026-08-21">21. 8. 2026</time>
+        </span>
+        <h3 class="article-title">Příběh utajené královny z Blanska ztvární nový muzikál studentů JAMU</h3>
+        <p class="article-excerpt">Téměř pohádkový příběh Karoliny Charlotty Dorothey Meineke, hannoverské šlechtičny a první manželky pozdějšího anglického krále Viléma IV, jejíž život byl spojený i s Blanskem, inspiroval studenty z brněnské JAMU.</p>
+        <span class="link-arrow">Číst článek</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── Galerie z inscenace ── -->
 <section class="section section-parchment" id="galerie" aria-label="Fotografie z inscenace">
   <div class="container">
@@ -243,36 +286,53 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
     <div class="section-head fade-up">
       <h2 class="section-title">Napsali o Karolině Meineke</h2>
       <div class="rule" aria-hidden="true"></div>
-      <p class="section-subtitle"></p>
+      <p class="section-subtitle">Historický příběh Karoliny Meineke v českých médiích.</p>
     </div>
-    <div class="article-grid fade-up">
-      <a class="article-card" href="https://www.novinky.cz/clanek/vase-zpravy-mela-byt-anglickou-kralovnou-ale-dozila-pozapomenuta-na-zamku-v-blansku-40183013" target="_blank" rel="noopener">
-        <span class="article-source">Novinky.cz</span>
-        <h3 class="article-title">Měla být anglickou královnou, ale dožila pozapomenuta na zámku v Blansku</h3>
-        <p class="article-excerpt">Příběh jako z červené knihovny, pro zúčastněné s nádechem hořkosti. V blanenském zámku skončil ve 46 letech život ženy, která měla být anglickou královnou.</p>
-        <span class="link-arrow">Číst článek</span>
-      </a>
-      <a class="article-card" href="https://medium.seznam.cz/clanek/lenka-potuckova-karolina-charlotta-dorothea-meineke-kralovna-z-blanska-189836" target="_blank" rel="noopener">
-        <span class="article-source">Seznam Médium</span>
-        <h3 class="article-title">Karolina Charlotta Dorothea Meineke – královna z Blanska</h3>
-        <p class="article-excerpt">O tom, že Viktorie nemusela být královnou, se moc nemluví. A přesto se to mohlo stát, kdyby její strýc Vilém IV. nerozvedl.</p>
-        <span class="link-arrow">Číst článek</span>
-      </a>
-      <a class="article-card" href="https://www.stoplusjednicka.cz/tajna-chot-anglickeho-krale-kdo-donutil-karolinu-meineke-k-rozvodu" target="_blank" rel="noopener">
-        <span class="article-source">100+1</span>
-        <h3 class="article-title">Tajná choť anglického krále: Kdo donutil Karolinu Meineke k rozvodu?</h3>
-        <p class="article-excerpt">Pouhý rok se Karolina von Linsingen mohla zvát manželkou budoucího britského panovníka. Pak zasáhly společenské konvence.</p>
-        <span class="link-arrow">Číst článek</span>
-      </a>
-      <a class="article-card" href="https://zena-in.cz/clanek/spatne-se-zamilovala-a-jeste-hur-vdala-kdyby-se-karolina-meineke-stala-anglickou-kralovnou-nejspis-by-historie-kralovnu-viktorii-vubec-neznala" target="_blank" rel="noopener">
-        <span class="article-source">Žena-in.cz</span>
-        <h3 class="article-title">Špatně se zamilovala a ještě hůř vdala. Kdyby se Karolina Meineke stala anglickou královnou, nejspíš by historie královnu Viktorii vůbec neznala</h3>
-        <p class="article-excerpt">Osud šlechtičny Karoliny Meineke, která část života prožila i v Blansku, tak trochu připomíná červenou knihovnu. Tedy alespoň zpočátku. Reálný příběh však postrádá pohádkový konec.</p>
-        <span class="link-arrow">Číst článek</span>
-      </a>
-      <!-- Zobrazeno pouze prvních 4 články na hlavní stránce; zbytek zůstává na stránce Karolina Meineke -->
-    </div>
-    <div class="fade-up" style="text-align:center; margin-top:3rem;">
+    <ul class="article-list fade-up">
+      <li>
+        <a class="article-list-item" href="https://www.novinky.cz/clanek/vase-zpravy-mela-byt-anglickou-kralovnou-ale-dozila-pozapomenuta-na-zamku-v-blansku-40183013" target="_blank" rel="noopener">
+          <span class="article-list-source">Novinky.cz</span>
+          <span class="article-list-title">Měla být anglickou královnou, ale dožila pozapomenuta na zámku v Blansku</span>
+          <span class="article-list-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="article-list-item" href="https://medium.seznam.cz/clanek/lenka-potuckova-karolina-charlotta-dorothea-meineke-kralovna-z-blanska-189836" target="_blank" rel="noopener">
+          <span class="article-list-source">Seznam Médium</span>
+          <span class="article-list-title">Karolina Charlotta Dorothea Meineke – královna z Blanska</span>
+          <span class="article-list-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="article-list-item" href="https://www.stoplusjednicka.cz/tajna-chot-anglickeho-krale-kdo-donutil-karolinu-meineke-k-rozvodu" target="_blank" rel="noopener">
+          <span class="article-list-source">100+1</span>
+          <span class="article-list-title">Tajná choť anglického krále: Kdo donutil Karolinu Meineke k rozvodu?</span>
+          <span class="article-list-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="article-list-item" href="https://zena-in.cz/clanek/spatne-se-zamilovala-a-jeste-hur-vdala-kdyby-se-karolina-meineke-stala-anglickou-kralovnou-nejspis-by-historie-kralovnu-viktorii-vubec-neznala" target="_blank" rel="noopener">
+          <span class="article-list-source">Žena-in.cz</span>
+          <span class="article-list-title">Špatně se zamilovala a ještě hůř vdala. Kdyby se Karolina Meineke stala anglickou královnou, nejspíš by historie královnu Viktorii vůbec neznala</span>
+          <span class="article-list-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="article-list-item" href="https://zpravy.tiscali.cz/karolina-z-linsingenu-se-tajne-vdala-za-prince-prezila-svou-smrt-a-nasla-domov-na-morave-527756" target="_blank" rel="noopener">
+          <span class="article-list-source">Tiscali.cz</span>
+          <span class="article-list-title">Karolina z Linsingenu se tajně vdala za prince. Přežila svou smrt a našla domov na Moravě</span>
+          <span class="article-list-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="article-list-item" href="https://www.blansko.cz/kralovsky-portret-bez-zlaceneho-ramu" target="_blank" rel="noopener">
+          <span class="article-list-source">Blansko.cz</span>
+          <span class="article-list-title">Královský portrét bez zlaceného rámu</span>
+          <span class="article-list-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+    </ul>
+    <div class="fade-up" style="text-align:center; margin-top:2.5rem;">
       <a href="karolina-meineke.html" class="btn btn-outline btn-lg">Více o Karolině Meineke</a>
     </div>
   </div>
