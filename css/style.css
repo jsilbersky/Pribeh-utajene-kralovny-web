@@ -1603,3 +1603,44 @@ em { font-style: italic; }
   .about-modal-title { font-size: 1.42rem; }
   .about-modal-sub { font-size: 1.02rem; margin-top: 1.5rem; }
 }
+
+/* ── Časté otázky – rozbalovací seznam ──
+   Nativní <details>: funguje bez JS, ovládá se klávesnicí a Google obsah uvnitř
+   indexuje normálně i ve sbaleném stavu, takže označkování FAQPage sedí. */
+.faq { margin-top: 2.25rem; border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+/* Odsazení a záporný okraj dělají z řádku klikatelný pruh: podbarvení při najetí
+   přesahuje text, takže je vidět, že reaguje celá otázka, ne jen slova. */
+.faq-q {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: baseline; gap: 1.25rem;
+  padding: 1.15rem .9rem; margin: 0 -.9rem;
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(1.12rem, 1.5vw, 1.3rem);
+  line-height: 1.45; color: var(--ink);
+  transition: color .25s var(--ease), background-color .25s var(--ease);
+}
+.faq-q::-webkit-details-marker { display: none; }
+/* Šipka: čtverec ze dvou obrysů otočený o 45° – dolů zavřeno, nahoru otevřeno.
+   Inkoust, ne zlato: zlatá je v paletě vyhrazená ornamentu a na 9px by zanikla. */
+.faq-q::after {
+  content: ''; flex: none; margin-left: auto; margin-top: .18em;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--ink-45);
+  border-bottom: 2px solid var(--ink-45);
+  transform: rotate(45deg);
+  transition: transform .3s var(--ease), border-color .25s var(--ease);
+}
+.faq-item[open] .faq-q::after { transform: rotate(-135deg); margin-top: .45em; }
+.faq-q:hover { color: var(--crimson); background: var(--line-2); }
+.faq-q:hover::after,
+.faq-item[open] .faq-q::after { border-color: var(--crimson); }
+.faq-item[open] .faq-q { color: var(--crimson); }
+.faq-q:focus-visible { outline: 2px solid var(--crimson); outline-offset: 2px; }
+.faq-a { padding: 0 2.5rem 1.6rem 0; }
+.faq-a p { font-size: 1.02rem; line-height: 1.9; color: var(--ink-80); margin: 0; }
+.faq-a p + p { margin-top: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-q, .faq-q::after { transition: none; }
+}
