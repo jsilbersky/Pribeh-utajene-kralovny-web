@@ -21,7 +21,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="favicon.svg">
   <link rel="stylesheet" href="css/fonts.css?v=20260905a">
-  <link rel="stylesheet" href="css/style.css?v=20260905a">
+  <link rel="stylesheet" href="css/style.css?v=20260912d">
   <!-- Hero je CSS pozadí, prohlížeč ho objeví až po stažení stylů. Preload ho
        vytáhne dopředu, aby se LCP neodkládal o celý round-trip. -->
   <link rel="preload" as="image" href="images/karolina-meineke-muzikal-vizual.webp" fetchpriority="high">
@@ -187,21 +187,80 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
   </div>
 </section>
 
+<!-- ── Ohlasy diváků ──
+     Zdroj: divácká hodnocení na i-divadlo.cz –
+     https://www.i-divadlo.cz/divadlo/jamu-brno/pribeh-utajene-kralovny/?subpage=hodnoceni
+     Citujeme doslova (včetně překlepů pisatele) a podepisujeme vždy
+     zdrojem, NIKDY přezdívkou.
+     Každá karta je odkaz na KONKRÉTNÍ příspěvek – kotva #id je v HTML zdroji
+     hodnocení (<a name="124061">), ne v adresním řádku.
+     Nový ohlas = přidat další .review. Grid je dvousloupcový a první karta
+     (.review--lead) jde přes oba sloupce, takže počet zbývajících karet
+     držet SUDÝ (2, 4, 6), jinak zůstane poslední osamocená v řádku.
+     Číslo a jednotku psát s &nbsp; (100&nbsp;%), jinak se to láme na řádek.
+     Delší a kratší citace párovat do stejného řádku, ať karty nejsou
+     rozdílně vysoké. -->
+<section class="section section-parchment" id="ohlasy" aria-label="Ohlasy diváků">
+  <div class="container">
+    <div class="section-head fade-up">
+      <h2 class="section-title">Ohlasy diváků</h2>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+    <div class="review-grid fade-up">
+      <a class="review review--lead" href="https://www.i-divadlo.cz/divadlo/jamu-brno/pribeh-utajene-kralovny/?subpage=hodnoceni#124030" target="_blank" rel="noopener">
+        <span class="review-text">„Silný příběh, výborná hudba, skvělé pěvecké a herecké výkony, promyšlená režie i choreografie fungují jako jeden celek.“</span>
+        <span class="review-source">i-divadlo.cz</span>
+      </a>
+      <a class="review" href="https://www.i-divadlo.cz/divadlo/jamu-brno/pribeh-utajene-kralovny/?subpage=hodnoceni#124047" target="_blank" rel="noopener">
+        <span class="review-text">„Nádherná, silná, zajímavá hudba. Ale vrcholný umělecký zážitek vám zaručí předevšim skvělé herecké i pěvecké výkony mladých herců. Za me úžasný umělecký zážitek.“</span>
+        <span class="review-source">i-divadlo.cz</span>
+      </a>
+      <a class="review" href="https://www.i-divadlo.cz/divadlo/jamu-brno/pribeh-utajene-kralovny/?subpage=hodnoceni#124061" target="_blank" rel="noopener">
+        <span class="review-text">„Nádherná hudba, po většinu představení má člověk husí kůži, topka je píseň v hutích. Krásné choreografie.“</span>
+        <span class="review-source">i-divadlo.cz</span>
+      </a>
+      <a class="review" href="https://www.i-divadlo.cz/divadlo/jamu-brno/pribeh-utajene-kralovny/?subpage=hodnoceni#124064" target="_blank" rel="noopener">
+        <span class="review-text">„Krásné spojení hudby, tance a silného příběhu. Rozhodně doporučuji.“</span>
+        <span class="review-source">i-divadlo.cz</span>
+      </a>
+      <a class="review" href="https://www.i-divadlo.cz/divadlo/jamu-brno/pribeh-utajene-kralovny/?subpage=hodnoceni#124076" target="_blank" rel="noopener">
+        <span class="review-text">„Musím to vidět znovu! Naprosto zasloužených 100&nbsp;%.“</span>
+        <span class="review-source">i-divadlo.cz</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── Muzikál v médiích ──
-     Nový článek = přidat další .article-card na začátek (nejnovější první).
-     Grid je dvousloupcový, proto na homepage držet SUDÝ počet karet (2, 4, 6),
-     jinak zůstane poslední karta osamocená v řádku.
+     Nový článek/reportáž = přidat další .article-card na začátek (nejnovější první).
+     Grid má TŘI sloupce (.article-grid--3), proto na homepage držet počet karet
+     dělitelný třemi (3, 6, 9), jinak zůstane poslední řádek neúplný.
+     Klesne-li počet zpátky na sudý, sundat --3 a vrátit dvousloupcový grid.
      Náhled ber z images/media/ (zmenšené kopie produkčních fotek, 900x600).
      Když redakce použije fotku, kterou web nemá, vyber jinou produkční fotku
      z images/foceni-na-zamku/ nebo images/inscenace/ – NEKOPÍRUJ fotografie
-     cizích redakcí. -->
+     cizích redakcí.
+     U videa/reportáže jen vyměnit text v .link-arrow za „Přehrát reportáž“,
+     vizuálně je karta stejná jako u článků. -->
 <section class="section section-tight-top press-section" id="v-mediich" aria-label="Muzikál v médiích">
   <div class="container">
     <div class="section-head fade-up">
       <h2 class="section-title">Muzikál v médiích</h2>
       <div class="rule" aria-hidden="true"></div>
     </div>
-    <div class="article-grid fade-up">
+    <div class="article-grid article-grid--3 fade-up">
+      <a class="article-card" href="https://www.ceskatelevize.cz/porady/10122427178-udalosti-v-regionech-brno/326281381990909/cast/1207239/" target="_blank" rel="noopener">
+        <span class="article-thumb">
+          <img src="images/media/ceska-televize-nahled.jpg" alt="" width="900" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="article-meta">
+          <span class="article-source">Česká televize</span>
+          <time class="article-date" datetime="2026-09-09">9. 9. 2026</time>
+        </span>
+        <h3 class="article-title">Muzikál studentů JAMU</h3>
+        <p class="article-excerpt">Příběh z přelomu osmnáctého a devatenáctého století o hannoverské šlechtičně Karolině Meineke zachycují v novém muzikálu studenti brněnské JAMU. Kromě osudu hlavní postavy ukazují publiku i dobový charakter tehdejšího hutního města Blanska.</p>
+        <span class="link-arrow">Přehrát reportáž</span>
+      </a>
       <a class="article-card" href="https://blanensky.denik.cz/zpravy-region/tajna-manzelka-budouciho-krale-zila-v-blansku-jeji-pribeh-ozije-v-muzikalu/" target="_blank" rel="noopener">
         <span class="article-thumb">
           <img src="images/media/blanensky-denik-nahled.jpg" alt="" width="900" height="600" loading="lazy" decoding="async">
@@ -238,41 +297,41 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
       <div class="rule" aria-hidden="true"></div>
     </div>
     <div class="stage-gallery fade-up" data-gallery data-no-caption>
-      <div class="sg-item tile" data-lb-src="images/inscenace/tanec-pod-lustrem.jpg">
-        <img src="images/inscenace/tanec-pod-lustrem.jpg" alt="Tanec pod lustrem ve scéně muzikálu Příběh utajené královny" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/tanec-souboru-pod-lustrem-full.jpg">
+        <img src="images/inscenace/tanec-souboru-pod-lustrem.jpg" alt="Tanec celého souboru pod křišťálovým lustrem v muzikálu Příběh utajené královny" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/setkani-tri-postav-v-kostymech.jpg">
-        <img src="images/inscenace/setkani-tri-postav-v-kostymech.jpg" alt="Setkání tří postav v kostýmech na jevišti Divadla na Orlí" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/karolina-v-kresle-full.jpg">
+        <img src="images/inscenace/karolina-v-kresle.jpg" alt="Karolina Meineke v krémových šatech se zlatou šerpou sedí v křesle" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/dvojice-v-bilem-vystup.jpg">
-        <img src="images/inscenace/dvojice-v-bilem-vystup.jpg" alt="Dvojice v bílém během tanečního výstupu" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/rozhovor-u-stolu-full.jpg">
+        <img src="images/inscenace/rozhovor-u-stolu.jpg" alt="Rozhovor muže v bílé uniformě a ženy v modrém přes stůl na jevišti" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/zena-v-cervenem-noir.jpg">
-        <img src="images/inscenace/zena-v-cervenem-noir.jpg" alt="Žena v červeném kostýmu, noirová scéna inscenace" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/cervena-scena-s-lustrem-full.jpg">
+        <img src="images/inscenace/cervena-scena-s-lustrem.jpg" alt="Scéna v červeném světle a kouři, muž v klobouku s holí uprostřed souboru" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/objeti-a-uteha.jpg">
-        <img src="images/inscenace/objeti-a-uteha.jpg" alt="Objetí a útěcha – emotivní moment z Příběhu utajené královny" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/zpev-v-modrem-svetle-full.jpg">
+        <img src="images/inscenace/zpev-v-modrem-svetle.jpg" alt="Zpívající herečka v modrém scénickém světle, v pozadí důstojník v uniformě" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/dve-zeny-proti-sobe-s-okvetnimi-listky.jpg">
-        <img src="images/inscenace/dve-zeny-proti-sobe-s-okvetnimi-listky.jpg" alt="Dvě ženy proti sobě s okvětními lístky růží" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/trojice-drzici-se-za-ruce-full.jpg">
+        <img src="images/inscenace/trojice-drzici-se-za-ruce.jpg" alt="Tři postavy držící se za ruce v okamžiku usmíření" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/muz-v-uniforme-vystup.jpg">
-        <img src="images/inscenace/muz-v-uniforme-vystup.jpg" alt="Muž v uniformě během vystoupení na jevišti" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/dustojnik-v-popredi-sceny-full.jpg">
+        <img src="images/inscenace/dustojnik-v-popredi-sceny.jpg" alt="Důstojník v tmavomodré uniformě v popředí, herečky po stranách scény" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/nezny-pohled-dvojice.jpg">
-        <img src="images/inscenace/nezny-pohled-dvojice.jpg" alt="Něžný pohled mezi dvěma postavami" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/setkani-u-stolku-s-kufrem-full.jpg">
+        <img src="images/inscenace/setkani-u-stolku-s-kufrem.jpg" alt="Setkání tří postav u stolku s kufrem, žena v zelených šatech uprostřed" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/dvojice-v-modrem-svetle.jpg">
-        <img src="images/inscenace/dvojice-v-modrem-svetle.jpg" alt="Dvojice zahalená modrým scénickým světlem" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/dve-zeny-mezi-okvetnimi-listky-full.jpg">
+        <img src="images/inscenace/dve-zeny-mezi-okvetnimi-listky.jpg" alt="Dvě ženy stojící proti sobě v modrém světle mezi okvětními lístky" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/trojice-se-smichem-a-dopisem.jpg">
-        <img src="images/inscenace/trojice-se-smichem-a-dopisem.jpg" alt="Trojice se smíchem nad dopisem s královskou pečetí" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/muz-s-rukama-na-srdci-full.jpg">
+        <img src="images/inscenace/muz-s-rukama-na-srdci.jpg" alt="Muž ve vestě se zavřenýma očima a rukama na srdci během sólového čísla" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/dve-postavy-v-cervenem.jpg">
-        <img src="images/inscenace/dve-postavy-v-cervenem.jpg" alt="Dvě postavy v červených kostýmech na scéně" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/dve-zeny-v-kabaretni-scene-full.jpg">
+        <img src="images/inscenace/dve-zeny-v-kabaretni-scene.jpg" alt="Dvě ženy v kloboucích v kabaretní scéně, jedna v modrém, druhá v červeném" width="1100" height="733" loading="lazy" decoding="async">
       </div>
-      <div class="sg-item tile" data-lb-src="images/inscenace/zena-v-zelenem-svetle.jpg">
-        <img src="images/inscenace/zena-v-zelenem-svetle.jpg" alt="Žena v zeleném světle – závěrečný výstup muzikálu Příběh utajené královny" loading="lazy">
+      <div class="sg-item tile" data-lb-src="images/inscenace/ansambl-s-dustojnikem-full.jpg">
+        <img src="images/inscenace/ansambl-s-dustojnikem.jpg" alt="Ansámbl muzikálu na jevišti, uprostřed důstojník v modrém kabátě" width="1100" height="733" loading="lazy" decoding="async">
       </div>
     </div>
     <div class="fade-up" style="margin-top:2.5rem; text-align:center;">

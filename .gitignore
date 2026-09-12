@@ -31,3 +31,7 @@ build/
 # OS temp files
 ~*
 *.tmp
+
+# Zdrojove fotky ve full rozliseni – na web patri jen zmensene verze
+# v images/inscenace/ apod., originaly se nenasazuji (desitky MB).
+images/na web/

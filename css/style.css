@@ -868,6 +868,18 @@ em { font-style: italic; }
 }
 .article-card .link-arrow { margin-top: auto; align-self: flex-start; }
 
+/* Tři karty na řádek – mřížka v „Muzikál v médiích“. Užší karty potřebují
+   menší vnitřní okraj, jinak se text sevře do pár slov na řádek.
+   Mezikrok na dva sloupce schválně není: při třech kartách by zůstala
+   poslední osamocená, takže se pod 900 px skládají rovnou pod sebe. */
+.article-grid--3 {
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  max-width: 1140px;
+}
+.article-grid--3 .article-card { --card-pad: clamp(1.4rem, 2.2vw, 1.9rem); }
+.article-grid--3 .article-title { font-size: clamp(1.14rem, 1.45vw, 1.3rem); }
+.article-grid--3 .article-excerpt { font-size: .9rem; margin-bottom: 1.6rem; }
+
 /* ── Řádek zdroj + datum (média o muzikálu) ─────────────────── */
 .article-meta {
   display: flex; align-items: center; flex-wrap: wrap;
@@ -934,6 +946,80 @@ em { font-style: italic; }
 }
 .article-list-item:hover .article-list-arrow,
 .article-list-item:focus-visible .article-list-arrow { opacity: 1; transform: translateX(0); }
+
+/* ── Ohlasy diváků – citace z i-divadlo.cz ──────────────────────
+   Celá karta je odkaz na konkrétní příspěvek. Chování při hoveru je
+   schválně opsané z .article-card, aby se obě mřížky karet na homepage
+   chovaly stejně.
+   Podepisujeme vždy zdrojem (i-divadlo.cz), nikdy přezdívkou pisatele.
+   Grid je dvousloupcový: první karta .review--lead jde přes oba sloupce,
+   počet ostatních proto držet SUDÝ (2, 4, 6), jinak zůstane poslední
+   karta osamocená v řádku. */
+.review-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  max-width: 1040px; margin: 0 auto;
+}
+.review {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: clamp(1.75rem, 3vw, 2.4rem);
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+}
+.review::before {
+  content: ''; position: absolute; inset: 0 auto auto 0; height: 2px; width: 100%;
+  z-index: 2;
+  background: var(--crimson);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .5s var(--ease);
+}
+.review:hover, .review:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--line-gold);
+  box-shadow: var(--shadow-md);
+}
+.review:hover::before, .review:focus-visible::before { transform: scaleX(1); }
+
+.review-text {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(1.12rem, 1.65vw, 1.35rem);
+  font-style: italic; font-weight: 400;
+  line-height: 1.55; letter-spacing: -.005em;
+  color: var(--ink);
+  margin-bottom: 1.6rem;
+}
+.review-source {
+  margin-top: auto;
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-family: 'Jost', sans-serif;
+  font-size: .64rem; font-weight: 500;
+  letter-spacing: .24em; text-transform: uppercase;
+  color: var(--crimson);
+}
+/* Zlatá linka roste při hoveru – jediný náznak, že karta někam vede */
+.review-source::before {
+  content: ''; height: 1px; width: 18px;
+  background: var(--line-gold);
+  transition: width .45s var(--ease);
+}
+.review:hover .review-source::before,
+.review:focus-visible .review-source::before { width: 34px; }
+
+/* Úvodní ohlas přes celou šířku – vysazený jako motto sekce */
+.review--lead {
+  grid-column: 1 / -1;
+  align-items: center; text-align: center;
+  border-color: var(--line-gold);
+  padding: clamp(2.25rem, 4vw, 3.25rem) clamp(1.75rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-sm);
+}
+.review--lead .review-text {
+  font-size: clamp(1.35rem, 2.3vw, 1.95rem);
+  line-height: 1.45;
+  max-width: 46ch; margin-left: auto; margin-right: auto;
+}
 
 /* ── Rozdělená sekce (text + mapa) ──────────────────────────── */
 .section-split .split-grid {
@@ -1485,15 +1571,19 @@ em { font-style: italic; }
   .feature-grid, .section-split .split-grid { grid-template-columns: 1fr; }
   .feature-grid .frame { max-width: 520px; margin: 0 auto; }
   .article-grid { grid-template-columns: repeat(2, 1fr); }
+  /* tři karty drží až k zalomení navigace, jinak by zbyla osamocená */
+  .article-grid--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
 }
 @media (max-width: 900px) {
   :root { --nav-height: 54px; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
   .container, .container-sm { padding: 0 1.5rem; }
+  .article-grid--3 { grid-template-columns: 1fr; }
 }
 @media (max-width: 780px) {
   .article-grid { grid-template-columns: 1fr; }
+  .review-grid { grid-template-columns: 1fr; }
   .article-list-item { grid-template-columns: 1fr; gap: .5rem; padding: 1.1rem .25rem; }
   .article-list-arrow { display: none; }
   .sticky-cta { display: none !important; }
