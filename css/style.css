@@ -1584,6 +1584,19 @@ em { font-style: italic; }
 @media (max-width: 780px) {
   .article-grid { grid-template-columns: 1fr; }
   .review-grid { grid-template-columns: 1fr; }
+  /* V jednom sloupci nemá úvodní ohlas co vysazovat – všechny karty
+     pod sebou musí vypadat stejně, jinak první působí jako omyl. */
+  .review--lead {
+    align-items: flex-start; text-align: left;
+    border-color: var(--line);
+    padding: clamp(1.75rem, 3vw, 2.4rem);
+    box-shadow: none;
+  }
+  .review--lead .review-text {
+    font-size: clamp(1.12rem, 1.65vw, 1.35rem);
+    line-height: 1.55;
+    max-width: none; margin-left: 0; margin-right: 0;
+  }
   .article-list-item { grid-template-columns: 1fr; gap: .5rem; padding: 1.1rem .25rem; }
   .article-list-arrow { display: none; }
   .sticky-cta { display: none !important; }
