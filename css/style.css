@@ -717,9 +717,26 @@ em { font-style: italic; }
 .playbill-rule span { font-size: .7rem; line-height: 1; }
 .playbill-venue {
   font-size: .78rem; letter-spacing: .24em; text-transform: uppercase;
-  color: var(--ink-62); margin-bottom: 2.3rem;
+  color: var(--ink-62); margin-bottom: 1.7rem;
 }
-@media (max-width: 560px) { .playbill-rule::before, .playbill-rule::after { width: 44px; } }
+/* poznámka o prosincových termínech – tichá, ale zachytí oko před proklikem */
+.playbill-note {
+  /* table = vlastní řádek, ale šířka jen podle textu */
+  display: table;
+  max-width: 100%; margin: 0 auto 2rem;
+  padding: .75rem 1.5rem;
+  text-align: center;
+  background: var(--gold-soft);
+  border: 1px solid var(--line-gold);
+  font-size: .84rem; line-height: 1.55; color: var(--ink-80);
+}
+/* obě věty vždy pod sebou – druhá je ta nová informace */
+.playbill-note-lines { display: flex; flex-direction: column; gap: .1rem; }
+.playbill-note strong { font-weight: 500; color: var(--crimson); }
+@media (max-width: 560px) {
+  .playbill-rule::before, .playbill-rule::after { width: 44px; }
+  .playbill-note { font-size: .78rem; padding: .7rem 1rem; }
+}
 
 /* ── Video ──────────────────────────────────────────────────── */
 .video-section { padding: clamp(4.5rem, 8.5vw, 7.5rem) 0; padding-bottom: clamp(2.5rem, 4.5vw, 3.5rem); }
