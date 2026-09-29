@@ -307,6 +307,10 @@ em { font-style: italic; }
 }
 .link-arrow:hover { gap: .9rem; color: var(--crimson-deep); }
 .link-arrow:hover::after { width: 30px; }
+/* Delší popisek složený z částí (<span>): na úzkém displeji se zalomí
+   celá poslední část i s čárkou, místo aby čárka odskočila od textu. */
+.link-arrow--wrap { flex-wrap: wrap; row-gap: .45rem; }
+.link-arrow--wrap:hover { gap: .45rem .6rem; }
 
 /* ── Navigace ───────────────────────────────────────────────── */
 .navbar {

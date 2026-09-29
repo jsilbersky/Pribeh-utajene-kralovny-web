@@ -239,9 +239,9 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
 
 <!-- ── Muzikál v médiích ──
      Nový článek/reportáž = přidat další .article-card na začátek (nejnovější první).
-     Grid má TŘI sloupce (.article-grid--3), proto na homepage držet počet karet
-     dělitelný třemi (3, 6, 9), jinak zůstane poslední řádek neúplný.
-     Klesne-li počet zpátky na sudý, sundat --3 a vrátit dvousloupcový grid.
+     Grid má DVA sloupce, proto na homepage držet sudý počet karet (2, 4, 6),
+     jinak zůstane poslední řádek neúplný. Při počtu dělitelném třemi
+     (3, 9) lze přidat .article-grid--3 pro třísloupcový grid.
      Náhled ber z images/media/ (zmenšené kopie produkčních fotek, 900x600).
      Když redakce použije fotku, kterou web nemá, vyber jinou produkční fotku
      z images/foceni-na-zamku/ nebo images/inscenace/ – NEKOPÍRUJ fotografie
@@ -254,7 +254,19 @@ divadelní jeviště. Světová premiéra se uskuteční v Divadle na Orlí v Br
       <h2 class="section-title">Muzikál v médiích</h2>
       <div class="rule" aria-hidden="true"></div>
     </div>
-    <div class="article-grid article-grid--3 fade-up">
+    <div class="article-grid fade-up">
+      <a class="article-card" href="https://tv.nova.cz/porad/vikend/video-epizoda/569374-28-9-2026" target="_blank" rel="noopener">
+        <span class="article-thumb">
+          <img src="images/media/nova-vikend-nahled.jpg" alt="" width="900" height="600" loading="lazy" decoding="async">
+        </span>
+        <span class="article-meta">
+          <span class="article-source">TV Nova · Víkend</span>
+          <time class="article-date" datetime="2026-09-28">28. 9. 2026</time>
+        </span>
+        <h3 class="article-title">Za utajenou královnou z Blanska</h3>
+        <p class="article-excerpt">Magazín Víkend se vydal za příběhem Karoliny Meineke, hannoverské šlechtičny, která se tajně provdala za budoucího anglického krále a dožila v Blansku. Jak její osud převedli na jeviště studenti brněnské JAMU, přibližuje vedoucí muzikálového ročníku Aleš Kohout.</p>
+        <span class="link-arrow link-arrow--wrap"><span>Přehrát reportáž</span><span>(začíná v&nbsp;10:59)</span></span>
+      </a>
       <a class="article-card" href="https://www.ceskatelevize.cz/porady/10122427178-udalosti-v-regionech-brno/326281381990909/cast/1207239/" target="_blank" rel="noopener">
         <span class="article-thumb">
           <img src="images/media/ceska-televize-nahled.jpg" alt="" width="900" height="600" loading="lazy" decoding="async">
