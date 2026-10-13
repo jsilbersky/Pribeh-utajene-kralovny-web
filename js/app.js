@@ -244,6 +244,73 @@
   triggers.forEach((t) => t.addEventListener('click', openModal));
 })();
 
+// Přehrávač videa – karty s [data-video] (reportáže uložené přímo na webu)
+/* href karty míří na .mp4, takže bez JS se video otevře v prohlížeči samo.
+   Okno se skládá až po kliknutí, aby se video nestahovalo zbytečně. */
+(function () {
+  const triggers = document.querySelectorAll('[data-video]');
+  if (!triggers.length) return;
+
+  let modal = null;
+  let video = null;
+  let caption = null;
+  let lastFocused = null;
+
+  function build() {
+    modal = document.createElement('div');
+    modal.className = 'video-modal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Přehrávač videa');
+    modal.innerHTML = `
+      <button type="button" class="video-modal-close" aria-label="Zavřít">✕</button>
+      <figure class="video-modal-inner">
+        <video controls playsinline preload="metadata"></video>
+        <figcaption class="video-modal-caption"></figcaption>
+      </figure>`;
+    document.body.appendChild(modal);
+    video = modal.querySelector('video');
+    caption = modal.querySelector('.video-modal-caption');
+    modal.querySelector('.video-modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  }
+
+  function openModal(e) {
+    e.preventDefault();
+    if (!modal) build();
+    const card = e.currentTarget;
+    const src = card.getAttribute('href');
+    if (video.getAttribute('src') !== src) video.setAttribute('src', src);
+    caption.textContent = card.dataset.videoCaption || '';
+    lastFocused = document.activeElement;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    video.focus();
+    // Kliknutí je gesto uživatele, takže prohlížeč přehrání se zvukem povolí
+    video.play().catch(() => {});
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function closeModal() {
+    video.pause();
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  // Escape zavírá; Tab přepíná jen mezi videem a křížkem
+  function onKeydown(e) {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (e.key !== 'Tab') return;
+    const close = modal.querySelector('.video-modal-close');
+    if (e.shiftKey && document.activeElement === close) { e.preventDefault(); video.focus(); }
+    else if (!e.shiftKey && document.activeElement === video) { e.preventDefault(); close.focus(); }
+  }
+
+  triggers.forEach((t) => t.addEventListener('click', openModal));
+})();
+
 // IntersectionObserver pro .fade-up a cast/act/timeline
 window.observeFadeUp = function observeFadeUp() {
   const io = new IntersectionObserver((entries) => {
